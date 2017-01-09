@@ -29,6 +29,8 @@ Quick">
         
     
     
+        <meta property="og:image" content="http://yoursite.com/assets/images/dog.jpg"/>
+    
     
     
     
@@ -45,6 +47,10 @@ Quick">
 
 
     
+        
+            
+        
+    
 
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -57,6 +63,8 @@ Quick">
                 href="#about">
         
         
+            <img class="header-picture" src="/assets/images/dog.jpg" alt="Author&#39;s picture"/>
+        
         </a>
     
 </header>
@@ -64,8 +72,23 @@ Quick">
             <!-- Define author's picture -->
 
 
+
+        
+    
+
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/dog.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">wrlg</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -78,7 +101,7 @@ Quick">
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                        <span class="sidebar-button-desc">Accueil</span>
+                        <span class="sidebar-button-desc">Home</span>
                     </a>
             </li>
             
@@ -114,7 +137,7 @@ Quick">
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                        <span class="sidebar-button-desc">Archive</span>
+                        <span class="sidebar-button-desc">Archives</span>
                     </a>
             </li>
             
@@ -126,7 +149,7 @@ Quick">
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">Rechercher</span>
+                        <span class="sidebar-button-desc">Search</span>
                     </a>
             </li>
             
@@ -138,7 +161,7 @@ Quick">
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                        <span class="sidebar-button-desc">À propos</span>
+                        <span class="sidebar-button-desc">About</span>
                     </a>
             </li>
             
@@ -185,7 +208,7 @@ Quick">
     <div class="post-meta">
     <time itemprop="datePublished" datetime="2017-01-09T13:21:02+08:00">
 	
-		    09 Jan 2017
+		    Jan 09, 2017
     	
     </time>
     
@@ -218,14 +241,14 @@ Quick">
                     <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -289,14 +312,14 @@ Quick">
                     <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -340,17 +363,17 @@ Quick">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/09/hello-world/">
-                <i class="fa fa-google-plus"></i><span>Partager sur Google Plus</span>
+                <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/09/hello-world/">
-                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/09/hello-world/">
-                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
     </ul>
@@ -362,11 +385,17 @@ Quick">
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
+        
+            <img id="about-card-picture" src="/assets/images/dog.jpg" alt="Author&#39;s picture"/>
         
             <h4 id="about-card-name">wrlg</h4>
         
@@ -401,7 +430,7 @@ Quick">
             </form>
         </div>
         <div class="modal-body">
-            <div class="no-result text-color-light text-center">aucun article trouvé</div>
+            <div class="no-result text-color-light text-center">no post found</div>
             <div class="results">
                 
                 <div class="media">
@@ -427,10 +456,10 @@ Quick">
         </div>
         <div class="modal-footer">
             <p class="results-count text-medium"
-                data-message-zero="aucun article trouvé"
-                data-message-one="1 article trouvé"
-                data-message-other="{n} articles trouvés">
-                1 article trouvé
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                1 post found
             </p>
         </div>
     </div>
