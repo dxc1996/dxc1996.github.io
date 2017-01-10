@@ -6,21 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="wrlg">
-    <title>phpstorm索引慢排除特定的资源目录 - wrlg</title>
+    <title>ios表情处理转码存入数据库 - wrlg</title>
     <meta name="author" content="Don dai">
     
     
     
-    <meta name="description" content="排除不使用的文件夹以及设定特定的资源根目录.   File → Settings → Project settings → Directories.从索引中排除yiilite.php:   File → Settings → IDE Settings → File Types.">
+    <meta name="description" content="把用户输入的文本转义（主要针对特殊符号和emoji表情）function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&amp;apos;undefined&amp;apos;)return &amp;apos;&amp;apos;;
+
+    $text = json_encode($str); //暴露出un">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="phpstorm索引慢排除特定的资源目录">
-<meta property="og:url" content="http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/index.html">
+<meta property="og:title" content="ios表情处理转码存入数据库">
+<meta property="og:url" content="http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/index.html">
 <meta property="og:site_name" content="wrlg">
-<meta property="og:description" content="排除不使用的文件夹以及设定特定的资源根目录.   File → Settings → Project settings → Directories.从索引中排除yiilite.php:   File → Settings → IDE Settings → File Types.">
-<meta property="og:updated_time" content="2017-01-10T02:12:58.243Z">
+<meta property="og:description" content="把用户输入的文本转义（主要针对特殊符号和emoji表情）function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&amp;apos;undefined&amp;apos;)return &amp;apos;&amp;apos;;
+
+    $text = json_encode($str); //暴露出un">
+<meta property="og:updated_time" content="2017-01-10T02:17:05.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpstorm索引慢排除特定的资源目录">
-<meta name="twitter:description" content="排除不使用的文件夹以及设定特定的资源根目录.   File → Settings → Project settings → Directories.从索引中排除yiilite.php:   File → Settings → IDE Settings → File Types.">
+<meta name="twitter:title" content="ios表情处理转码存入数据库">
+<meta name="twitter:description" content="把用户输入的文本转义（主要针对特殊符号和emoji表情）function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&amp;apos;undefined&amp;apos;)return &amp;apos;&amp;apos;;
+
+    $text = json_encode($str); //暴露出un">
     
     
         
@@ -163,21 +175,15 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            phpstorm索引慢排除特定的资源目录
+            ios表情处理转码存入数据库
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:05:27+08:00">
+    <time itemprop="datePublished" datetime="2017-01-10T10:14:05+08:00">
 	
 		    1月 10, 2017
     	
     </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
     
 </div>
 
@@ -185,26 +191,35 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><strong>排除不使用的文件夹以及设定特定的资源根目录.</strong><br>   File → Settings → Project settings → Directories.<br><strong>从索引中排除yiilite.php:</strong><br>   File → Settings → IDE Settings → File Types.</p>
+            <h3 id="把用户输入的文本转义（主要针对特殊符号和emoji表情）"><a href="#把用户输入的文本转义（主要针对特殊符号和emoji表情）" class="headerlink" title="把用户输入的文本转义（主要针对特殊符号和emoji表情）"></a>把用户输入的文本转义（主要针对特殊符号和emoji表情）</h3><pre><code>function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&apos;undefined&apos;)return &apos;&apos;;
 
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&quot;/(\\\u[ed][0-9a-f]{3})/i&quot;,function($str){
+        return addslashes($str[0]);
+    },$text); //将emoji的unicode留下，其他不动，这里的正则比原答案增加了d，因为我发现我很多emoji实际上是\ud开头的，反而暂时没发现有\ue开头。
+    return json_decode($text);
+}
+</code></pre><h3 id="解码上面的转义"><a href="#解码上面的转义" class="headerlink" title="解码上面的转义"></a>解码上面的转义</h3><pre><code>function userTextDecode($str){
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&apos;/\\\\\\\\/i&apos;,function($str){
+        return &apos;\\&apos;;
+    },$text); //将两条斜杠变成一条，其他不动
+    return json_decode($text);
+}
+</code></pre>
             
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/phpstorm/">phpstorm</a>
-
-            </div>
         
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/ios表情处理转码存入数据库/"  data-tooltip="ios表情处理转码存入数据库">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -212,7 +227,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/09/git-ssh配置/" data-tooltip="git ssh配置">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/" data-tooltip="phpstorm索引慢排除特定的资源目录">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -227,17 +242,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -275,7 +290,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/ios表情处理转码存入数据库/"  data-tooltip="ios表情处理转码存入数据库">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -283,7 +298,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/09/git-ssh配置/" data-tooltip="git ssh配置">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/" data-tooltip="phpstorm索引慢排除特定的资源目录">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -298,17 +313,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -328,17 +343,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/10/ios表情处理转码存入数据库/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
