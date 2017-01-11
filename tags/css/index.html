@@ -405,7 +405,18 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
+<pre><code>//a网站的请求页：
+&lt;script&gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&lt;/script&gt;
+&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+
+//b网站的jsonp.js 响应页
+jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

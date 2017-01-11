@@ -138,7 +138,7 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -166,7 +166,7 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
 <pre><code>//a网站的请求页：
 &lt;script&gt;
@@ -178,69 +178,12 @@
 
 //b网站的jsonp.js 响应页
 jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
-&lt;!-- more --&gt;
-</code></pre><p><strong>要点</strong></p>
-<ol>
-<li>a网站定义jsonp的回调处理。</li>
-<li>a网站jsonp跨域请求</li>
-<li>b网站使用a网站的同名函数处理跨域请求</li>
-</ol>
-<p>补充说明</p>
-<blockquote>
-<p>以上便是js的jsonp实现跨域，其实它和ajax的XHR对象并没有任何关系，由于jquery<br>把jsonp的实现封装在了ajax中，所以jsonp和ajax经常同时被提起.</p>
-</blockquote>
-<p>jquery 跨域</p>
-<pre><code>不使用jsonp的ajax请求
-$.ajax({ 
-    type: &quot;GET&quot;,     
-    url: &quot;http://www.b.com/jsonp.js&quot;
-    dataType: &quot;json&quot;,
-    success: function(data) {
-        //对data的处理
-    },
-    error: function(jqXHR){     
-        alert(&quot;发生错误：&quot; + jqXHR.status);  
-    },     
-});
-</code></pre><p>如果不使用jsonp会有跨域报错。</p>
-<pre><code>使用了jsonp 的请求:
-$.ajax({ 
-    type: &quot;GET&quot;,     
-    url: &quot;http://www.b.com/jsonp.js&quot;
-    dataType: &quot;jsonp&quot;,
-    jsonp:&quot;callback&quot;,//“callback”：任意名字都可以
-    success: function(data) {
-        //对data的处理
-    },
-    error: function(jqXHR){     
-        alert(&quot;发生错误：&quot; + jqXHR.status);  
-    },     
-});
-</code></pre><p><strong>服务端的修改</strong></p>
-<pre><code>加上获取请求的处理：
-$jsonp = $_GET[&quot;callback&quot;];//callback名字和请求的名字相同
-2.返回参数之前加上$jsonp, 并用（）将参数括住,以php后端为例：
-
-//原来：$result =&apos;{&quot;success&quot;:true,&quot;msg&quot;:&quot;找到员工：员工编号：&apos; . $value[&quot;number&quot;] .&apos;&quot;}&apos;;
-//改为：
-$result =$jsonp . &apos;({&quot;success&quot;:true,&quot;msg&quot;:&quot;找到员工：员工编号：&apos; . $value[&quot;number&quot;] .&apos;&quot;})&apos;;
-</code></pre><p>ajax的处理把在get请求后追加了callback参数，并给她赋予了参数值，响应值追加了callback的参数值。</p>
-<p><strong>局限</strong><br><strong>jsonp仅支持get请求</strong></p>
-<p><strong>另辟蹊径</strong></p>
-<pre><code>XHR2（XMLHttpRequest Level 2）只需在服务器端设置两个参数即可：
-
-header(&apos;Access-Control-Allow-Origin:*&apos;);//允许跨域请求的域名，允许全部设为*
-header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
 </code></pre>
                     
+                        <a href="/2017/01/11/js跨域/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2017/01/11/js跨域/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -472,7 +415,18 @@ header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
+<pre><code>//a网站的请求页：
+&lt;script&gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&lt;/script&gt;
+&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+
+//b网站的jsonp.js 响应页
+jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

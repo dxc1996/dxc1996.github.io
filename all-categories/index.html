@@ -160,11 +160,11 @@
     <section class="boxes">
         
             
-                    <div id="posts-list-前端" class="archive box" data-category="前端" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/前端/">前端 (2)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/css样式整理/">css样式整理</a><span class="archive-post-date"> - 1月 10, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/hexo-d无效的原因/">hexo d无效的原因</a><span class="archive-post-date"> - 1月 10, 2017</span></li></ul></div>
+                    <div id="posts-list-前端" class="archive box" data-category="前端" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/前端/">前端 (2)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/hexo-d无效的原因/">hexo d无效的原因</a><span class="archive-post-date"> - 1月 10, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/css样式整理/">css样式整理</a><span class="archive-post-date"> - 1月 10, 2017</span></li></ul></div>
             
         
             
-                    <div id="posts-list-后端" class="archive box" data-category="后端" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/后端/">后端 (5)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/01/09/git初始化/">git初始化</a><span class="archive-post-date"> - 1月 09, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/09/git-ssh配置/">git ssh配置</a><span class="archive-post-date"> - 1月 09, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/11/js跨域/">js跨域</a><span class="archive-post-date"> - 1月 11, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/php7-0composer报错/">php7.0composer报错</a><span class="archive-post-date"> - 1月 10, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/">phpstorm索引慢排除特定的资源目录</a><span class="archive-post-date"> - 1月 10, 2017</span></li></ul></div>
+                    <div id="posts-list-后端" class="archive box" data-category="后端" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/后端/">后端 (5)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/01/09/git-ssh配置/">git ssh配置</a><span class="archive-post-date"> - 1月 09, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/09/git初始化/">git初始化</a><span class="archive-post-date"> - 1月 09, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/11/js跨域/">js跨域</a><span class="archive-post-date"> - 1月 11, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/php7-0composer报错/">php7.0composer报错</a><span class="archive-post-date"> - 1月 10, 2017</span></li><li class="archive-post"><a class="archive-post-title" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/">phpstorm索引慢排除特定的资源目录</a><span class="archive-post-date"> - 1月 10, 2017</span></li></ul></div>
             
         
     </section>
@@ -383,7 +383,18 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
+<pre><code>//a网站的请求页：
+&lt;script&gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&lt;/script&gt;
+&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+
+//b网站的jsonp.js 响应页
+jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

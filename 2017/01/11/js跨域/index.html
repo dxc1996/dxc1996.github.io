@@ -33,7 +33,7 @@
 }
 &amp;lt;/script&amp;gt;
 &amp;lt;script src=&amp;quot;http;//www.b.com/jsonp.js&amp;quot">
-<meta property="og:updated_time" content="2017-01-11T01:43:04.297Z">
+<meta property="og:updated_time" content="2017-01-11T01:43:58.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js跨域">
 <meta name="twitter:description" content="js跨域利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容
@@ -199,8 +199,8 @@
 
 //b网站的jsonp.js 响应页
 jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
-&lt;!-- more --&gt;
-</code></pre><p><strong>要点</strong></p>
+</code></pre><a id="more"></a>
+<p><strong>要点</strong></p>
 <ol>
 <li>a网站定义jsonp的回调处理。</li>
 <li>a网站jsonp跨域请求</li>
@@ -618,7 +618,18 @@ header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
+<pre><code>//a网站的请求页：
+&lt;script&gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&lt;/script&gt;
+&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+
+//b网站的jsonp.js 响应页
+jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
