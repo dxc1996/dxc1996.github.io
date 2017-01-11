@@ -6,19 +6,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="稳如老狗">
-    <title>归档: 2017 - 稳如老狗</title>
+    <title>js跨域 - 稳如老狗</title>
     <meta name="author" content="Don dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="稳如老狗">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+    <meta name="description" content="js跨域利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容
+//a网站的请求页：
+&amp;lt;script&amp;gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http;//www.b.com/jsonp.js&amp;quot">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="js跨域">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/js跨域/index.html">
 <meta property="og:site_name" content="稳如老狗">
+<meta property="og:description" content="js跨域利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容
+//a网站的请求页：
+&amp;lt;script&amp;gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http;//www.b.com/jsonp.js&amp;quot">
+<meta property="og:updated_time" content="2017-01-11T01:43:04.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="稳如老狗">
+<meta name="twitter:title" content="js跨域">
+<meta name="twitter:description" content="js跨域利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容
+//a网站的请求页：
+&amp;lt;script&amp;gt;
+ function jsonp(json){
+    //对返回的json数据的处理
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http;//www.b.com/jsonp.js&amp;quot">
     
     
         
@@ -47,7 +72,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">稳如老狗</a>
@@ -71,7 +96,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -130,26 +155,21 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/11/js跨域/">
-                            js跨域
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            js跨域
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" datetime="2017-01-11T09:42:04+08:00">
 	
 		    1月 11, 2017
@@ -164,10 +184,11 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
 <pre><code>//a网站的请求页：
 &lt;script&gt;
  function jsonp(json){
@@ -232,370 +253,77 @@ $result =$jsonp . &apos;({&quot;success&quot;:true,&quot;msg&quot;:&quot;找到�
 header(&apos;Access-Control-Allow-Origin:*&apos;);//允许跨域请求的域名，允许全部设为*
 header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
 </code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/11/js跨域/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/hexo-d无效的原因/">
-                            hexo d无效的原因
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:26:07+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/js/">js</a>
 
             </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>deploy:
-  type: git 
-  repo: git@github.com:yourname/yournamne.github.io.git 
-  branch: master
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/hexo-d无效的原因/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/php7-0composer报错/">
-                            php7.0composer报错
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:21:54+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/hexo-d无效的原因/" data-tooltip="hexo d无效的原因">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
+        <li class="post-action">
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/php7composererror" alt="php70composererrror"><br>
-                    
-                        <a href="/2017/01/10/php7-0composer报错/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
+                <a class="post-action-btn btn btn--default" href="#">
             
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/css样式整理/">
-                            css样式整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:48:53+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>一 字体属性：(font)</strong></p>
-<p>大小 {font-size: x-large;}(特大) xx-small;(极小) 一般中文用不到，只要用数值就可以，单位：PX、PD<br>样式 {font-style: oblique;}(偏斜体) italic;(斜体) normal;(正常)<br>行高 {line-height: normal;}(正常) 单位：PX、PD、EM<br>粗细 {font-weight: bold;}(粗体) lighter;(细体) normal;(正常)<br>变体 {font-variant: small-caps;}(小型大写字母) normal;(正常)<br>大小写 {text-transform: capitalize;}(首字母大写) uppercase;(大写) lowercase;(小写) none;(无)<br>
-                    
-                        <a href="/2017/01/10/css样式整理/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/ios表情处理转码存入数据库/">
-                            ios表情处理转码存入数据库
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:14:05+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="把用户输入的文本转义（主要针对特殊符号和emoji表情）"><a href="#把用户输入的文本转义（主要针对特殊符号和emoji表情）" class="headerlink" title="把用户输入的文本转义（主要针对特殊符号和emoji表情）"></a>把用户输入的文本转义（主要针对特殊符号和emoji表情）</h3><pre><code>function userTextEncode($str){
-    if(!is_string($str))return $str;
-    if(!$str || $str==&apos;undefined&apos;)return &apos;&apos;;
-
-    $text = json_encode($str); //暴露出unicode
-    $text = preg_replace_callback(&quot;/(\\\u[ed][0-9a-f]{3})/i&quot;,function($str){
-        return addslashes($str[0]);
-    },$text); //将emoji的unicode留下，其他不动，这里的正则比原答案增加了d，因为我发现我很多emoji实际上是\ud开头的，反而暂时没发现有\ue开头。
-    return json_decode($text);
-}
-</code></pre><h3 id="解码上面的转义"><a href="#解码上面的转义" class="headerlink" title="解码上面的转义"></a>解码上面的转义</h3><pre><code>function userTextDecode($str){
-    $text = json_encode($str); //暴露出unicode
-    $text = preg_replace_callback(&apos;/\\\\\\\\/i&apos;,function($str){
-        return &apos;\\&apos;;
-    },$text); //将两条斜杠变成一条，其他不动
-    return json_decode($text);
-}
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/ios表情处理转码存入数据库/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/">
-                            phpstorm索引慢排除特定的资源目录
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:05:27+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>排除不使用的文件夹以及设定特定的资源根目录.</strong><br>   File → Settings → Project settings → Directories.<br><strong>从索引中排除yiilite.php:</strong><br>   File → Settings → IDE Settings → File Types.</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/phpstorm索引慢排除特定的资源目录/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/09/git-ssh配置/">
-                            git ssh配置
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-09T16:25:17+08:00">
-	
-		    1月 09, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="git-config-–global-user-name-“”"><a href="#git-config-–global-user-name-“”" class="headerlink" title="git config –global user.name “”"></a>git config –global user.name “”</h3><h3 id="git-config-–global-user-email-“”"><a href="#git-config-–global-user-email-“”" class="headerlink" title="git config –global user.email “”"></a>git config –global user.email “”</h3>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/09/git-ssh配置/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/09/git初始化/">
-                            git初始化
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-09T16:12:26+08:00">
-	
-		    1月 09, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/02ae0cd162d9f2d3c6230014afec8a136227ccf1.jpg" alt="dog" title="dog"></p>
-<h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><h3 id="git-remote-add-origin-https-gitlab-com-my-house-test2-git"><a href="#git-remote-add-origin-https-gitlab-com-my-house-test2-git" class="headerlink" title="git remote add origin https://gitlab.com/my-house/test2.git"></a>git remote add origin <a href="https://gitlab.com/my-house/test2.git" target="_blank" rel="external">https://gitlab.com/my-house/test2.git</a></h3><h3 id="git-add"><a href="#git-add" class="headerlink" title="git add ."></a>git add .</h3><h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><h3 id="git-push-u-origin-master"><a href="#git-push-u-origin-master" class="headerlink" title="git push -u origin master"></a>git push -u origin master</h3><h3 id="新版本git-pull失败-git-pull-origin-master-–allow-unrelated-histories"><a href="#新版本git-pull失败-git-pull-origin-master-–allow-unrelated-histories" class="headerlink" title="新版本git pull失败  git pull origin master –allow-unrelated-histories"></a>新版本git pull失败  git pull origin master –allow-unrelated-histories</h3>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/09/git初始化/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-number">第 1 页 共 1 页</li>
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+        
+    </div>
+</article>
 
 
 
@@ -606,6 +334,84 @@ header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/10/hexo-d无效的原因/" data-tooltip="hexo d无效的原因">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/01/11/js跨域/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
             
         </div>
         
@@ -835,6 +641,8 @@ header(&apos;Access-Control-Allow-Methods:POST,GET&apos;);
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
 
