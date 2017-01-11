@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="稳如老狗">
-    <title>标签: js - 稳如老狗</title>
+    <title>归档 - 稳如老狗</title>
     <meta name="author" content="Don dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="稳如老狗">
-<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
 <meta property="og:site_name" content="稳如老狗">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="稳如老狗">
@@ -151,21 +151,79 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/01/11/js跨域/">
-                            js跨域
+                        <a class="link-unstyled" href="/2017/01/10/ios表情处理转码存入数据库/">
+                            ios表情处理转码存入数据库
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:42:04+08:00">
+    <time itemprop="datePublished" datetime="2017-01-10T10:14:05+08:00">
 	
-		    1月 11, 2017
+		    1月 10, 2017
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="把用户输入的文本转义（主要针对特殊符号和emoji表情）"><a href="#把用户输入的文本转义（主要针对特殊符号和emoji表情）" class="headerlink" title="把用户输入的文本转义（主要针对特殊符号和emoji表情）"></a>把用户输入的文本转义（主要针对特殊符号和emoji表情）</h3><pre><code>function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&apos;undefined&apos;)return &apos;&apos;;
+
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&quot;/(\\\u[ed][0-9a-f]{3})/i&quot;,function($str){
+        return addslashes($str[0]);
+    },$text); //将emoji的unicode留下，其他不动，这里的正则比原答案增加了d，因为我发现我很多emoji实际上是\ud开头的，反而暂时没发现有\ue开头。
+    return json_decode($text);
+}
+</code></pre><h3 id="解码上面的转义"><a href="#解码上面的转义" class="headerlink" title="解码上面的转义"></a>解码上面的转义</h3><pre><code>function userTextDecode($str){
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&apos;/\\\\\\\\/i&apos;,function($str){
+        return &apos;\\&apos;;
+    },$text); //将两条斜杠变成一条，其他不动
+    return json_decode($text);
+}
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/01/10/ios表情处理转码存入数据库/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/">
+                            phpstorm索引慢排除特定的资源目录
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-01-10T10:05:27+08:00">
+	
+		    1月 10, 2017
     	
     </time>
     
@@ -179,24 +237,113 @@
 
             </div>
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
-<pre><code>//a网站的请求页：
-&lt;script&gt;
- function jsonp(json){
-    //对返回的json数据的处理
-}
-&lt;/script&gt;
-&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>排除不使用的文件夹以及设定特定的资源根目录.</strong><br>   File → Settings → Project settings → Directories.<br><strong>从索引中排除yiilite.php:</strong><br>   File → Settings → IDE Settings → File Types.</p>
 
-//b网站的jsonp.js 响应页
-jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
-</code></pre>
                     
-                        <a href="/2017/01/11/js跨域/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
                         
+                    
+                    
+                        <p>
+                            <a href="/2017/01/10/phpstorm索引慢排除特定的资源目录/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/01/09/git-ssh配置/">
+                            git ssh配置
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-01-09T16:25:17+08:00">
+	
+		    1月 09, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="git-config-–global-user-name-“”"><a href="#git-config-–global-user-name-“”" class="headerlink" title="git config –global user.name “”"></a>git config –global user.name “”</h3><h3 id="git-config-–global-user-email-“”"><a href="#git-config-–global-user-email-“”" class="headerlink" title="git config –global user.email “”"></a>git config –global user.email “”</h3>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/01/09/git-ssh配置/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/01/09/git初始化/">
+                            git初始化
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-01-09T16:12:26+08:00">
+	
+		    1月 09, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/02ae0cd162d9f2d3c6230014afec8a136227ccf1.jpg" alt="dog" title="dog"></p>
+<h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><h3 id="git-remote-add-origin-https-gitlab-com-my-house-test2-git"><a href="#git-remote-add-origin-https-gitlab-com-my-house-test2-git" class="headerlink" title="git remote add origin https://gitlab.com/my-house/test2.git"></a>git remote add origin <a href="https://gitlab.com/my-house/test2.git" target="_blank" rel="external">https://gitlab.com/my-house/test2.git</a></h3><h3 id="git-add"><a href="#git-add" class="headerlink" title="git add ."></a>git add .</h3><h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><h3 id="git-push-u-origin-master"><a href="#git-push-u-origin-master" class="headerlink" title="git push -u origin master"></a>git push -u origin master</h3><h3 id="新版本git-pull失败-git-pull-origin-master-–allow-unrelated-histories"><a href="#新版本git-pull失败-git-pull-origin-master-–allow-unrelated-histories" class="headerlink" title="新版本git pull失败  git pull origin master –allow-unrelated-histories"></a>新版本git pull失败  git pull origin master –allow-unrelated-histories</h3>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/01/09/git初始化/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
                     
                 </div>
             
@@ -207,12 +354,22 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
     <div class="pagination-bar">
     <ul class="pagination">
         
+        <li class="pagination-prev">
+            
+                <a class="btn btn--default btn--small" href="/ ">
+            
+                <i class="fa fa-angle-left text-base icon-mr"></i>
+                    <span>上一页</span>
+            </a>
+        </li>
         
-        <li class="pagination-number">第 1 页 共 1 页</li>
+        
+        <li class="pagination-number">第 2 页 共 2 页</li>
     </ul>
 </div>
 
 </section>
+
 
 
                 <footer id="footer" class="main-content-wrap">
