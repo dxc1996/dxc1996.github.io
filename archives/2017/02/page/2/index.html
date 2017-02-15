@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>归档: 2017 - 一路还要走多久。</title>
+    <title>归档: 2017/2 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2017/02/page/2/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一路还要走多久。">
@@ -157,15 +157,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/02/15/windows-redis启动命令/">
-                            windows redis启动命令
+                        <a class="link-unstyled" href="/2017/02/04/laravel-ide自动补全/">
+                            laravel ide自动补全
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-15T14:43:24+08:00">
+    <time itemprop="datePublished" datetime="2017-02-04T10:49:53+08:00">
 	
-		    2月 15, 2017
+		    2月 04, 2017
     	
     </time>
     
@@ -180,267 +180,14 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>在redis文件目录下执行redis-server  redis.windows.conf
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/15/windows-redis启动命令/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue请求接口url参数配置/">
-                            vue请求接口url参数配置
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T17:02:30+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue请求接口url参数配置</strong></p>
-<ul>
-<li><p>new?id=1</p>
-<pre><code>`this.$http.get(&apos;api/news-detail.json&apos;, {
-      params: {
-          id: this.$route.params.id
-      }
-  }).then(({data}) =&gt; {
-      this.news = data
-  })`
-</code></pre></li>
-<li><p>new/1</p>
-<pre><code>`let id = this.$route.params.id;
-this.$http.get(&apos;http://127.0.0.1:8000/api/news/&apos;+id,{}).then(({data}) =&gt; {
-        this.news = data.data
-})`
-</code></pre></li>
-</ul>
+                    <p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></p>
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/02/14/vue请求接口url参数配置/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue-resource入门/">
-                            vue-resource入门
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T13:51:17+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue-resource安装使用</strong></p>
-<ul>
-<li><code>npm install vue-resource</code></li>
-<li>在main.js头部<code>import VueResource from &#39;vue-resource&#39;</code> <code>Vue.use(VueResource)</code></li>
-<li>在组件中<pre><code>`this.$http.get(api.news).then(function(response){
-         this.newslist = response.data
- })`
-</code></pre></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/14/vue-resource入门/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vuex入门/">
-                            vuex入门
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T13:30:10+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vuex安装使用</strong></p>
-<ul>
-<li><code>npm install vuex</code></li>
-<li>在main.js头部<code>import Vuex from &#39;vuex&#39;</code> <code>Vue.use(Vuex)</code></li>
-</ul>
-<pre><code>const store = new Vuex.Store({
-        state: {
-            user: {
-                id: 1,
-                name: &apos;user&apos; 
-            }
-        },
-        mutations: {
-            setUser(state,user){
-                state.user = user
-            }
-        }
-})
-</code></pre><ul>
-<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
-<li>就可以全局调用了 <code></code></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/14/vuex入门/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue-router/">
-                            vue-router
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T13:03:42+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue-router安装使用</strong></p>
-<ul>
-<li><code>npm install vue-router</code></li>
-<li>在main.js头部<code>import VueRouter from &#39;vue-router&#39;</code> <code>Vue.use(VueRouter)</code></li>
-</ul>
-<pre><code>const router = new VueRouter({
-       routes: [
-           {path: &apos;/&apos;, component:App},
-           {path: &apos;/login&apos;, component:Login},
-           {path: &apos;/news/:id&apos;, component:News}
-       ]
-})
-</code></pre><ul>
-<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
-<li>在index.html中id=‘app’的div中 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/14/vue-router/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/02/04/laravel-ide自动补全/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -454,15 +201,17 @@ this.$http.get(&apos;http://127.0.0.1:8000/api/news/&apos;+id,{}).then(({data}) 
     <div class="pagination-bar">
     <ul class="pagination">
         
-        
-        <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/archives/2017/page/2/">
-                    <span>下一页</span>
-                <i class="fa fa-angle-right text-base icon-ml"></i>
+        <li class="pagination-prev">
+            
+                <a class="btn btn--default btn--small" href="/ ">
+            
+                <i class="fa fa-angle-left text-base icon-mr"></i>
+                    <span>上一页</span>
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 3 页</li>
+        
+        <li class="pagination-number">第 2 页 共 2 页</li>
     </ul>
 </div>
 
