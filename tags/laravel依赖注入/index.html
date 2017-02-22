@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>标签: jq - 一路还要走多久。</title>
+    <title>标签: laravel依赖注入 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/tags/jq/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/laravel依赖注入/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一路还要走多久。">
@@ -157,21 +157,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/01/11/jq-get-方法取不到元素/">
-                            jq get()方法取不到元素
+                        <a class="link-unstyled" href="/2017/02/22/laravel依赖注入/">
+                            laravel依赖注入
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:48:49+08:00">
+    <time itemprop="datePublished" datetime="2017-02-22T15:58:47+08:00">
 	
-		    1月 11, 2017
+		    2月 22, 2017
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/前端/">前端</a>
+    <a class="category-link" href="/categories/后端/">后端</a>
 
 
     
@@ -180,14 +180,32 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$($(&quot;#example-navbar-collapse&quot;).find(&quot;li&quot;).get(12)).addClass(&quot;active&quot;);
-</code></pre>
+                    <p>依赖注入：</p>
+<pre><code>例：public function store(CreateUserRequest $request)
+{
+    return $request-&gt;all();
+    $user = new User();
+    $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
+    $user-&gt;password = $request-&gt;input(&apos;password&apos;);
+
+    try{
+        if($user-&gt;save()){
+            return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
+        }else{
+            return \Response::json([&apos;register error&apos;],500);
+        }
+    }catch(DBALException $e){
+        return $e-&gt;getMessage();
+    }
+}
+</code></pre><p>   就是注入CreateUserRequest实例</p>
+
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/01/11/jq-get-方法取不到元素/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/02/22/laravel依赖注入/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>

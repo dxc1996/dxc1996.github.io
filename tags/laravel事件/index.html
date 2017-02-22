@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>标签: jq - 一路还要走多久。</title>
+    <title>标签: laravel事件 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/tags/jq/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/laravel事件/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一路还要走多久。">
@@ -151,27 +151,27 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/01/11/jq-get-方法取不到元素/">
-                            jq get()方法取不到元素
+                        <a class="link-unstyled" href="/2017/02/22/laravel事件/">
+                            laravel事件
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:48:49+08:00">
+    <time itemprop="datePublished" datetime="2017-02-22T15:00:59+08:00">
 	
-		    1月 11, 2017
+		    2月 22, 2017
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/前端/">前端</a>
+    <a class="category-link" href="/categories/后端/">后端</a>
 
 
     
@@ -179,18 +179,40 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$($(&quot;#example-navbar-collapse&quot;).find(&quot;li&quot;).get(12)).addClass(&quot;active&quot;);
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>1、创建事件<code>php artisan event:generate</code><br>2、然后在事件中 接收参数</p>
+<pre><code>class OrderPaid
+{
+    use InteractsWithSockets, SerializesModels;
+
+
+    public $order;
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct(Order $order)
+    {
+        $this-&gt;order = $order;
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new PrivateChannel(&apos;channel-name&apos;);
+    }
+}
 </code></pre>
                     
+                        <a href="/2017/02/22/laravel事件/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2017/01/11/jq-get-方法取不到元素/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
                     
                 </div>
             

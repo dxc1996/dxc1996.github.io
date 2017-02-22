@@ -157,6 +157,72 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/22/laravel依赖注入/">
+                            laravel依赖注入
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-22T15:58:47+08:00">
+	
+		    2月 22, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>依赖注入：</p>
+<pre><code>例：public function store(CreateUserRequest $request)
+{
+    return $request-&gt;all();
+    $user = new User();
+    $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
+    $user-&gt;password = $request-&gt;input(&apos;password&apos;);
+
+    try{
+        if($user-&gt;save()){
+            return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
+        }else{
+            return \Response::json([&apos;register error&apos;],500);
+        }
+    }catch(DBALException $e){
+        return $e-&gt;getMessage();
+    }
+}
+</code></pre><p>   就是注入CreateUserRequest实例</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/laravel依赖注入/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/22/laravel事件/">
                             laravel事件
                         </a>
@@ -179,7 +245,7 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>1、创建事件<code>php artisan event:generate</code><br>2、然后在事件中 接收参数</p>
 <pre><code>class OrderPaid
 {
@@ -207,75 +273,12 @@
         return new PrivateChannel(&apos;channel-name&apos;);
     }
 }
-&lt;!--more--&gt;
-</code></pre><p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
-<pre><code>protected $listen = [
-        &apos;App\Events\OrderPaid&apos; =&gt; [
-            &apos;App\Listeners\ChargeUser&apos;,
-
-        ],
-    ];
-</code></pre><p>4、listeners中监听事件</p>
-<pre><code>class ChargeUser
-{
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * Handle the event.
-     *
-     * @param  OrderPaid  $event
-     * @return void
-     */
-    public function handle(OrderPaid $event)
-    {
-        $order = $event-&gt;order;
-        $user = $order-&gt;user;
-        $user-&gt;expired_at = date(&apos;Y-m-d H:i:s&apos;, strtotime(&apos;+&apos;.$order-&gt;month.&apos; month&apos;, strtotime($user-&gt;expired_at)));
-        $user-&gt;save();
-    }
-}
-</code></pre><p>5、在controllers中调用事件</p>
-<pre><code>namespace App\Http\Controllers;
-
-use App\Order;
-use App\Events\OrderShipped;
-use App\Http\Controllers\Controller;
-
-class OrderController extends Controller
-{
-    /**
-     * 将传递过来的订单发货
-     *
-     * @param  int  $orderId
-     * @return Response
-     */
-    public function ship($orderId)
-    {
-        $order = Order::findOrFail($orderId);
-
-        // 订单的发货逻辑...
-
-        event(new OrderShipped($order));
-    }
-}
 </code></pre>
                     
+                        <a href="/2017/02/22/laravel事件/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2017/02/22/laravel事件/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -423,49 +426,6 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
 </code></pre>
                     
                         <a href="/2017/01/11/js跨域/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/php7-0composer报错/">
-                            php7.0composer报错
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:21:54+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/php7composererror" alt="php70composererrror"><br>
-                    
-                        <a href="/2017/01/10/php7-0composer报错/" class="postShorten-excerpt_link link">
                             阅读全文
                         </a>
                         
@@ -664,7 +624,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 17 篇文章
+                找到 18 篇文章
             </p>
         </div>
     </div>

@@ -39,7 +39,7 @@ class OrderPaid
      * Create a new event instance.
      *
      * @return v">
-<meta property="og:updated_time" content="2017-02-22T07:53:09.112Z">
+<meta property="og:updated_time" content="2017-02-22T07:59:14.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel事件">
 <meta name="twitter:description" content="1、创建事件php artisan event:generate2、然后在事件中 接收参数
@@ -237,8 +237,8 @@ class OrderPaid
         return new PrivateChannel(&apos;channel-name&apos;);
     }
 }
-&lt;!--more--&gt;
-</code></pre><p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
+</code></pre><a id="more"></a>
+<p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
 <pre><code>protected $listen = [
         &apos;App\Events\OrderPaid&apos; =&gt; [
             &apos;App\Listeners\ChargeUser&apos;,
@@ -305,7 +305,7 @@ class OrderController extends Controller
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/事件/">事件</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/laravel事件/">laravel事件</a>
 
             </div>
         
@@ -314,7 +314,7 @@ class OrderController extends Controller
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel依赖注入/"  data-tooltip="laravel依赖注入">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -385,7 +385,7 @@ class OrderController extends Controller
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel依赖注入/"  data-tooltip="laravel依赖注入">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -618,7 +618,7 @@ class OrderController extends Controller
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 17 篇文章
+                找到 18 篇文章
             </p>
         </div>
     </div>
