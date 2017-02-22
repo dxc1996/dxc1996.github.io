@@ -6,23 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>ajax设置好了跨域却无法跨域问题 - 一路还要走多久。</title>
+    <title>laravel跨域 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. Origin &amp;#39;null&amp;#39; is therefore not allowed access.查请求头General会发现status code为302(">
+    <meta name="description" content="1、使用composr安装barryvdh/laravel-cors.
+$ composer require barryvdh/laravel-cors
+2、把Cors\ServiceProvider添加到config/app.php providers 数组中:
+Barryvdh\Cors\ServiceProvider::class,
+3、发布cors配置
+php artisan vendor">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ajax设置好了跨域却无法跨域问题">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/index.html">
+<meta property="og:title" content="laravel跨域">
+<meta property="og:url" content="http://yoursite.com/2017/02/22/laravel跨域/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. Origin &amp;#39;null&amp;#39; is therefore not allowed access.查请求头General会发现status code为302(">
-<meta property="og:updated_time" content="2017-02-22T06:32:23.132Z">
+<meta property="og:description" content="1、使用composr安装barryvdh/laravel-cors.
+$ composer require barryvdh/laravel-cors
+2、把Cors\ServiceProvider添加到config/app.php providers 数组中:
+Barryvdh\Cors\ServiceProvider::class,
+3、发布cors配置
+php artisan vendor">
+<meta property="og:updated_time" content="2017-02-22T09:45:50.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ajax设置好了跨域却无法跨域问题">
-<meta name="twitter:description" content="ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. Origin &amp;#39;null&amp;#39; is therefore not allowed access.查请求头General会发现status code为302(">
+<meta name="twitter:title" content="laravel跨域">
+<meta name="twitter:description" content="1、使用composr安装barryvdh/laravel-cors.
+$ composer require barryvdh/laravel-cors
+2、把Cors\ServiceProvider添加到config/app.php providers 数组中:
+Barryvdh\Cors\ServiceProvider::class,
+3、发布cors配置
+php artisan vendor">
     
     
         
@@ -158,11 +173,11 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ajax设置好了跨域却无法跨域问题
+            laravel跨域
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T14:15:46+08:00">
+    <time itemprop="datePublished" datetime="2017-02-22T17:31:20+08:00">
 	
 		    2月 22, 2017
     	
@@ -170,7 +185,7 @@
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/前端/">前端</a>
+    <a class="category-link" href="/categories/后端/">后端</a>
 
 
     
@@ -180,11 +195,30 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错<code>No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access.</code><br>查请求头<strong>General</strong>会发现status code为<strong>302</strong>(页面跳转)会发现是因为ajax跳转报错之后返回上一页上一个页面不允许跨域所以会报这个错</p>
-<p>解决方法：请求后面加上json参数 例如:</p>
-<pre><code>$.post(&apos;http://127.0.0.1:8000/api/register&apos;,function(data){
+            <p>1、使用composr安装barryvdh/laravel-cors.</p>
+<pre><code>$ composer require barryvdh/laravel-cors
+</code></pre><p>2、把Cors\ServiceProvider添加到config/app.php providers 数组中:</p>
+<pre><code>Barryvdh\Cors\ServiceProvider::class,
+</code></pre><p>3、发布cors配置</p>
+<pre><code>php artisan vendor:publish --provider=&quot;Barryvdh\Cors\ServiceProvider&quot;
+</code></pre><p> 4、注册中间件</p>
+<pre><code>在$middlewareGroups数组中的api键里添加&apos;cors&apos;
+protected $middlewareGroups = [
+    &apos;web&apos; =&gt; [
+        \App\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\VerifyCsrfToken::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
 
-},&apos;json&apos;);
+    &apos;api&apos; =&gt; [
+        &apos;throttle:60,1&apos;,
+        &apos;bindings&apos;,
+        &apos;cors&apos;
+    ],
+];
 </code></pre>
             
         </div>
@@ -194,7 +228,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/ajax/">ajax</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/laravel/">laravel</a>
 
             </div>
         
@@ -203,7 +237,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel事件/"  data-tooltip="laravel事件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -211,7 +245,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/15/windows-redis启动命令/" data-tooltip="windows redis启动命令">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel-generator使用整理/" data-tooltip="laravel-generator使用整理">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -226,17 +260,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -274,7 +308,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel事件/"  data-tooltip="laravel事件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -282,7 +316,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/15/windows-redis启动命令/" data-tooltip="windows redis启动命令">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel-generator使用整理/" data-tooltip="laravel-generator使用整理">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -297,17 +331,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -327,17 +361,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel跨域/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

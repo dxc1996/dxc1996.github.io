@@ -156,6 +156,77 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/22/laravel跨域/">
+                            laravel跨域
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-22T17:31:20+08:00">
+	
+		    2月 22, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>1、使用composr安装barryvdh/laravel-cors.</p>
+<pre><code>$ composer require barryvdh/laravel-cors
+</code></pre><p>2、把Cors\ServiceProvider添加到config/app.php providers 数组中:</p>
+<pre><code>Barryvdh\Cors\ServiceProvider::class,
+</code></pre><p>3、发布cors配置</p>
+<pre><code>php artisan vendor:publish --provider=&quot;Barryvdh\Cors\ServiceProvider&quot;
+</code></pre><p> 4、注册中间件</p>
+<pre><code>在$middlewareGroups数组中的api键里添加&apos;cors&apos;
+protected $middlewareGroups = [
+    &apos;web&apos; =&gt; [
+        \App\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\VerifyCsrfToken::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
+
+    &apos;api&apos; =&gt; [
+        &apos;throttle:60,1&apos;,
+        &apos;bindings&apos;,
+        &apos;cors&apos;
+    ],
+];
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/laravel跨域/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/22/laravel-generator使用整理/">
                             laravel-generator使用整理
                         </a>
@@ -388,58 +459,6 @@ php artisan infyom:api_scaffold $MODEL_NAME
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/22/ajax设置好了跨域却无法跨域问题/">
-                            ajax设置好了跨域却无法跨域问题
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T14:15:46+08:00">
-	
-		    2月 22, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错<code>No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access.</code><br>查请求头<strong>General</strong>会发现status code为<strong>302</strong>(页面跳转)会发现是因为ajax跳转报错之后返回上一页上一个页面不允许跨域所以会报这个错</p>
-<p>解决方法：请求后面加上json参数 例如:</p>
-<pre><code>$.post(&apos;http://127.0.0.1:8000/api/register&apos;,function(data){
-
-},&apos;json&apos;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/22/ajax设置好了跨域却无法跨域问题/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -451,7 +470,7 @@ php artisan infyom:api_scaffold $MODEL_NAME
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 4 页</li>
+        <li class="pagination-number">第 1 页 共 5 页</li>
     </ul>
 </div>
 
@@ -627,7 +646,7 @@ php artisan infyom:api_scaffold $MODEL_NAME
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 20 篇文章
+                找到 21 篇文章
             </p>
         </div>
     </div>
