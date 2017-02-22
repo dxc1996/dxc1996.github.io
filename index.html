@@ -150,7 +150,7 @@
                 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -178,7 +178,7 @@
 
             </div>
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-content" itemprop="articleBody">
                     <p>1、创建事件<code>php artisan event:generate</code><br>2、然后在事件中 接收参数</p>
 <pre><code>class OrderPaid
 {
@@ -206,12 +206,74 @@
         return new PrivateChannel(&apos;channel-name&apos;);
     }
 }
+</code></pre><p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
+<pre><code>protected $listen = [
+        &apos;App\Events\OrderPaid&apos; =&gt; [
+            &apos;App\Listeners\ChargeUser&apos;,
+
+        ],
+    ];
+</code></pre><p>4、listeners中监听事件</p>
+<pre><code>class ChargeUser
+{
+    /**
+     * Create the event listener.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Handle the event.
+     *
+     * @param  OrderPaid  $event
+     * @return void
+     */
+    public function handle(OrderPaid $event)
+    {
+        $order = $event-&gt;order;
+        $user = $order-&gt;user;
+        $user-&gt;expired_at = date(&apos;Y-m-d H:i:s&apos;, strtotime(&apos;+&apos;.$order-&gt;month.&apos; month&apos;, strtotime($user-&gt;expired_at)));
+        $user-&gt;save();
+    }
+}
+</code></pre><p>5、在controllers中调用事件</p>
+<pre><code>namespace App\Http\Controllers;
+
+use App\Order;
+use App\Events\OrderShipped;
+use App\Http\Controllers\Controller;
+
+class OrderController extends Controller
+{
+    /**
+     * 将传递过来的订单发货
+     *
+     * @param  int  $orderId
+     * @return Response
+     */
+    public function ship($orderId)
+    {
+        $order = Order::findOrFail($orderId);
+
+        // 订单的发货逻辑...
+
+        event(new OrderShipped($order));
+    }
+}
 </code></pre>
                     
-                        <a href="/2017/02/22/laravel事件/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
                         
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/laravel事件/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
                     
                 </div>
             
