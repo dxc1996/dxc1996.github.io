@@ -6,23 +6,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>laravel ide自动补全 - 一路还要走多久。</title>
+    <title>laravel事件 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="https://github.com/barryvdh/laravel-ide-helper">
+    <meta name="description" content="1、创建事件php artisan event:generate2、然后在事件中 接收参数
+class OrderPaid
+{
+    use InteractsWithSockets, SerializesModels;
+
+
+    public $order;
+    /**
+     * Create a new event instance.
+     *
+     * @return v">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="laravel ide自动补全">
-<meta property="og:url" content="http://yoursite.com/2017/02/04/laravel-ide自动补全/index.html">
+<meta property="og:title" content="laravel事件">
+<meta property="og:url" content="http://yoursite.com/2017/02/22/laravel事件/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="https://github.com/barryvdh/laravel-ide-helper">
-<meta property="og:updated_time" content="2017-02-04T02:50:56.000Z">
+<meta property="og:description" content="1、创建事件php artisan event:generate2、然后在事件中 接收参数
+class OrderPaid
+{
+    use InteractsWithSockets, SerializesModels;
+
+
+    public $order;
+    /**
+     * Create a new event instance.
+     *
+     * @return v">
+<meta property="og:updated_time" content="2017-02-22T07:19:06.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel ide自动补全">
-<meta name="twitter:description" content="https://github.com/barryvdh/laravel-ide-helper">
+<meta name="twitter:title" content="laravel事件">
+<meta name="twitter:description" content="1、创建事件php artisan event:generate2、然后在事件中 接收参数
+class OrderPaid
+{
+    use InteractsWithSockets, SerializesModels;
+
+
+    public $order;
+    /**
+     * Create a new event instance.
+     *
+     * @return v">
     
     
         
@@ -158,13 +188,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            laravel ide自动补全
+            laravel事件
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-04T10:49:53+08:00">
+    <time itemprop="datePublished" datetime="2017-02-22T15:00:59+08:00">
 	
-		    2月 04, 2017
+		    2月 22, 2017
     	
     </time>
     
@@ -180,8 +210,66 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></p>
+            <p>1、创建事件<code>php artisan event:generate</code><br>2、然后在事件中 接收参数</p>
+<pre><code>class OrderPaid
+{
+    use InteractsWithSockets, SerializesModels;
 
+
+    public $order;
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct(Order $order)
+    {
+        $this-&gt;order = $order;
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new PrivateChannel(&apos;channel-name&apos;);
+    }
+}
+</code></pre><a id="more"></a>
+<p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
+<pre><code>protected $listen = [
+        &apos;App\Events\OrderPaid&apos; =&gt; [
+            &apos;App\Listeners\ChargeUser&apos;,
+
+        ],
+    ];
+</code></pre><p>4、在controllers中调用事件</p>
+<pre><code>namespace App\Http\Controllers;
+
+use App\Order;
+use App\Events\OrderShipped;
+use App\Http\Controllers\Controller;
+
+class OrderController extends Controller
+{
+    /**
+     * 将传递过来的订单发货
+     *
+     * @param  int  $orderId
+     * @return Response
+     */
+    public function ship($orderId)
+    {
+        $order = Order::findOrFail($orderId);
+
+        // 订单的发货逻辑...
+
+        event(new OrderShipped($order));
+    }
+}
+</code></pre>
             
         </div>
     </div>
@@ -190,7 +278,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/phpstorm/">phpstorm</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/事件/">事件</a>
 
             </div>
         
@@ -199,7 +287,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/14/vue-router/"  data-tooltip="vue-router">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -207,7 +295,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/11/jq-get-方法取不到元素/" data-tooltip="jq get()方法取不到元素">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/ajax设置好了跨域却无法跨域问题/" data-tooltip="ajax设置好了跨域却无法跨域问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -222,17 +310,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -270,7 +358,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/14/vue-router/"  data-tooltip="vue-router">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -278,7 +366,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/01/11/jq-get-方法取不到元素/" data-tooltip="jq get()方法取不到元素">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/ajax设置好了跨域却无法跨域问题/" data-tooltip="ajax设置好了跨域却无法跨域问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -293,17 +381,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -323,17 +411,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/04/laravel-ide自动补全/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel事件/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
