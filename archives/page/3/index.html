@@ -157,6 +157,75 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/14/vuex入门/">
+                            vuex入门
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-14T13:30:10+08:00">
+	
+		    2月 14, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>vuex安装使用</strong></p>
+<ul>
+<li><code>npm install vuex</code></li>
+<li>在main.js头部<code>import Vuex from &#39;vuex&#39;</code> <code>Vue.use(Vuex)</code></li>
+</ul>
+<pre><code>const store = new Vuex.Store({
+        state: {
+            user: {
+                id: 1,
+                name: &apos;user&apos; 
+            }
+        },
+        mutations: {
+            setUser(state,user){
+                state.user = user
+            }
+        }
+})
+</code></pre><ul>
+<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
+<li>就可以全局调用了 <code></code></li>
+</ul>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/14/vuex入门/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/14/vue-router/">
                             vue-router
                         </a>
@@ -363,57 +432,6 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/hexo-d无效的原因/">
-                            hexo d无效的原因
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:26:07+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>deploy:
-  type: git 
-  repo: git@github.com:yourname/yournamne.github.io.git 
-  branch: master
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/hexo-d无效的原因/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -611,7 +629,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 21 篇文章
+                找到 22 篇文章
             </p>
         </div>
     </div>
