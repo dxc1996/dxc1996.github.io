@@ -151,6 +151,72 @@
     <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/22/laravel依赖注入/">
+                            laravel依赖注入
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-22T15:58:47+08:00">
+	
+		    2月 22, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>依赖注入：</p>
+<pre><code>例：public function store(CreateUserRequest $request)
+{
+    return $request-&gt;all();
+    $user = new User();
+    $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
+    $user-&gt;password = $request-&gt;input(&apos;password&apos;);
+
+    try{
+        if($user-&gt;save()){
+            return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
+        }else{
+            return \Response::json([&apos;register error&apos;],500);
+        }
+    }catch(DBALException $e){
+        return $e-&gt;getMessage();
+    }
+}
+</code></pre><p>   就是注入CreateUserRequest实例 在app/http/Requests目录中</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/laravel依赖注入/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
