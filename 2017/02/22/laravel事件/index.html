@@ -39,7 +39,7 @@ class OrderPaid
      * Create a new event instance.
      *
      * @return v">
-<meta property="og:updated_time" content="2017-02-22T07:24:29.969Z">
+<meta property="og:updated_time" content="2017-02-22T07:53:09.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel事件">
 <meta name="twitter:description" content="1、创建事件php artisan event:generate2、然后在事件中 接收参数
@@ -237,6 +237,7 @@ class OrderPaid
         return new PrivateChannel(&apos;channel-name&apos;);
     }
 }
+&lt;!--more--&gt;
 </code></pre><p>   3、在app/Repositories/EventServiveProvider中绑定监听器</p>
 <pre><code>protected $listen = [
         &apos;App\Events\OrderPaid&apos; =&gt; [
