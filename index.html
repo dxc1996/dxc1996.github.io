@@ -150,7 +150,7 @@
                 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -178,41 +178,17 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>1、使用composr安装barryvdh/laravel-cors.</p>
 <pre><code>$ composer require barryvdh/laravel-cors
 </code></pre><p>2、把Cors\ServiceProvider添加到config/app.php providers 数组中:</p>
 <pre><code>Barryvdh\Cors\ServiceProvider::class,
-</code></pre><p>3、发布cors配置</p>
-<pre><code>php artisan vendor:publish --provider=&quot;Barryvdh\Cors\ServiceProvider&quot;
-</code></pre><p> 4、注册中间件</p>
-<pre><code>在$middlewareGroups数组中的api键里添加&apos;cors&apos;
-protected $middlewareGroups = [
-    &apos;web&apos; =&gt; [
-        \App\Http\Middleware\EncryptCookies::class,
-        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-        \Illuminate\Session\Middleware\StartSession::class,
-        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \App\Http\Middleware\VerifyCsrfToken::class,
-        \Illuminate\Routing\Middleware\SubstituteBindings::class,
-    ],
-
-    &apos;api&apos; =&gt; [
-        &apos;throttle:60,1&apos;,
-        &apos;bindings&apos;,
-        &apos;cors&apos;
-    ],
-];
 </code></pre>
                     
+                        <a href="/2017/02/22/laravel跨域/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2017/02/22/laravel跨域/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
                     
                 </div>
             
