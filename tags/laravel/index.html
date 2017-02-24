@@ -334,14 +334,12 @@ $factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
 });
 
 使用前在app\AppServiceProvider register方法
-public function register()
-    {
-        //
-        $this-&gt;app-&gt;bind(&apos;Faker\Generator&apos;, function () {
-            return new Factory(&apos;zh_CN&apos;);
-        });
-    }
-
+ public function register()
+{
+    $this-&gt;app-&gt;bind(&apos;Faker\Generator&apos;, function () {
+        return Factory::create(&apos;zh_CN&apos;);
+    });
+}
 配置成zh_CN 会自生成国内的手机号名字。
 </code></pre>
                     

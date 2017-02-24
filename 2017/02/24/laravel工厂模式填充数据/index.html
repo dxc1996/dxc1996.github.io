@@ -31,7 +31,7 @@ $factory-&amp;gt;define(App\Models\User::class, function (Faker\Generator $faker
     return [
         &amp;apos;name&amp;apos; =&amp;gt; $faker-&amp;gt;name,
         &amp;apos;email&amp;apos; =">
-<meta property="og:updated_time" content="2017-02-24T05:08:05.261Z">
+<meta property="og:updated_time" content="2017-02-24T07:20:28.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel工厂模式填充数据">
 <meta name="twitter:description" content="工厂模式填充数据
@@ -220,14 +220,12 @@ $factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
 });
 
 使用前在app\AppServiceProvider register方法
-public function register()
-    {
-        //
-        $this-&gt;app-&gt;bind(&apos;Faker\Generator&apos;, function () {
-            return new Factory(&apos;zh_CN&apos;);
-        });
-    }
-
+ public function register()
+{
+    $this-&gt;app-&gt;bind(&apos;Faker\Generator&apos;, function () {
+        return Factory::create(&apos;zh_CN&apos;);
+    });
+}
 配置成zh_CN 会自生成国内的手机号名字。
 </code></pre>
             
