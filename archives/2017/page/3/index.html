@@ -157,6 +157,227 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/22/ajax设置好了跨域却无法跨域问题/">
+                            ajax设置好了跨域却无法跨域问题
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-22T14:15:46+08:00">
+	
+		    2月 22, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错<code>No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access.</code><br>查请求头<strong>General</strong>会发现status code为<strong>302</strong>(页面跳转)会发现是因为ajax跳转报错之后返回上一页上一个页面不允许跨域所以会报这个错</p>
+<p>解决方法：请求后面加上json参数 例如:</p>
+<pre><code>$.post(&apos;http://127.0.0.1:8000/api/register&apos;,function(data){
+
+},&apos;json&apos;);
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/ajax设置好了跨域却无法跨域问题/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/15/windows-redis启动命令/">
+                            windows redis启动命令
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-15T14:43:24+08:00">
+	
+		    2月 15, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <pre><code>在redis文件目录下执行redis-server  redis.windows.conf
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/15/windows-redis启动命令/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/14/vue请求接口url参数配置/">
+                            vue请求接口url参数配置
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-14T17:02:30+08:00">
+	
+		    2月 14, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>vue请求接口url参数配置</strong></p>
+<ul>
+<li><p>new?id=1</p>
+<pre><code>`this.$http.get(&apos;api/news-detail.json&apos;, {
+      params: {
+          id: this.$route.params.id
+      }
+  }).then(({data}) =&gt; {
+      this.news = data
+  })`
+</code></pre></li>
+<li><p>new/1</p>
+<pre><code>`let id = this.$route.params.id;
+this.$http.get(&apos;http://127.0.0.1:8000/api/news/&apos;+id,{}).then(({data}) =&gt; {
+        this.news = data.data
+})`
+</code></pre></li>
+</ul>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/14/vue请求接口url参数配置/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/14/vue-resource入门/">
+                            vue-resource入门
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-14T13:51:17+08:00">
+	
+		    2月 14, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>vue-resource安装使用</strong></p>
+<ul>
+<li><code>npm install vue-resource</code></li>
+<li>在main.js头部<code>import VueResource from &#39;vue-resource&#39;</code> <code>Vue.use(VueResource)</code></li>
+<li>在组件中<pre><code>`this.$http.get(api.news).then(function(response){
+         this.newslist = response.data
+ })`
+</code></pre></li>
+</ul>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/14/vue-resource入门/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/14/vuex入门/">
                             vuex入门
                         </a>
@@ -219,219 +440,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue-router/">
-                            vue-router
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T13:03:42+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue-router安装使用</strong></p>
-<ul>
-<li><code>npm install vue-router</code></li>
-<li>在main.js头部<code>import VueRouter from &#39;vue-router&#39;</code> <code>Vue.use(VueRouter)</code></li>
-</ul>
-<pre><code>const router = new VueRouter({
-       routes: [
-           {path: &apos;/&apos;, component:App},
-           {path: &apos;/login&apos;, component:Login},
-           {path: &apos;/news/:id&apos;, component:News}
-       ]
-})
-</code></pre><ul>
-<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
-<li>在index.html中id=‘app’的div中 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/14/vue-router/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/04/laravel-ide自动补全/">
-                            laravel ide自动补全
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-04T10:49:53+08:00">
-	
-		    2月 04, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/04/laravel-ide自动补全/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/11/jq-get-方法取不到元素/">
-                            jq get()方法取不到元素
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:48:49+08:00">
-	
-		    1月 11, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$($(&quot;#example-navbar-collapse&quot;).find(&quot;li&quot;).get(12)).addClass(&quot;active&quot;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/11/jq-get-方法取不到元素/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/11/js跨域/">
-                            js跨域
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:42:04+08:00">
-	
-		    1月 11, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
-<pre><code>//a网站的请求页：
-&lt;script&gt;
- function jsonp(json){
-    //对返回的json数据的处理
-}
-&lt;/script&gt;
-&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
-
-//b网站的jsonp.js 响应页
-jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
-</code></pre>
-                    
-                        <a href="/2017/01/11/js跨域/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -452,7 +460,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
             </a>
         </li>
         
-        <li class="pagination-number">第 3 页 共 5 页</li>
+        <li class="pagination-number">第 3 页 共 6 页</li>
     </ul>
 </div>
 
@@ -629,7 +637,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 22 篇文章
+                找到 26 篇文章
             </p>
         </div>
     </div>
