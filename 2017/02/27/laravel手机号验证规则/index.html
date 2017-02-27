@@ -6,41 +6,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>laravel依赖注入 - 一路还要走多久。</title>
+    <title>laravel手机号验证规则 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="依赖注入：
-例：public function store(CreateUserRequest $request)
+    <meta name="description" content="在AppServiceProvider.php中加
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
 {
-    return $request-&amp;gt;all();
-    $user = new User();
-    $user-&amp;gt;mobile = $request-&amp;gt;input(&amp;apos;mobile&amp;apos;);
-    $user-&amp;gt;password">
+    /**
+     * Bootstrap any application services.">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="laravel依赖注入">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/laravel依赖注入/index.html">
+<meta property="og:title" content="laravel手机号验证规则">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/laravel手机号验证规则/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="依赖注入：
-例：public function store(CreateUserRequest $request)
+<meta property="og:description" content="在AppServiceProvider.php中加
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
 {
-    return $request-&amp;gt;all();
-    $user = new User();
-    $user-&amp;gt;mobile = $request-&amp;gt;input(&amp;apos;mobile&amp;apos;);
-    $user-&amp;gt;password">
-<meta property="og:updated_time" content="2017-02-22T08:28:38.894Z">
+    /**
+     * Bootstrap any application services.">
+<meta property="og:updated_time" content="2017-02-27T03:35:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel依赖注入">
-<meta name="twitter:description" content="依赖注入：
-例：public function store(CreateUserRequest $request)
+<meta name="twitter:title" content="laravel手机号验证规则">
+<meta name="twitter:description" content="在AppServiceProvider.php中加
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
 {
-    return $request-&amp;gt;all();
-    $user = new User();
-    $user-&amp;gt;mobile = $request-&amp;gt;input(&amp;apos;mobile&amp;apos;);
-    $user-&amp;gt;password">
+    /**
+     * Bootstrap any application services.">
     
     
         
@@ -176,13 +182,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            laravel依赖注入
+            laravel手机号验证规则
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T15:58:47+08:00">
+    <time itemprop="datePublished" datetime="2017-02-27T11:31:33+08:00">
 	
-		    2月 22, 2017
+		    2月 27, 2017
     	
     </time>
     
@@ -198,26 +204,38 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>依赖注入：</p>
-<pre><code>例：public function store(CreateUserRequest $request)
-{
-    return $request-&gt;all();
-    $user = new User();
-    $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
-    $user-&gt;password = $request-&gt;input(&apos;password&apos;);
+            <p>在AppServiceProvider.php中加</p>
+<pre><code>namespace App\Providers;
 
-    try{
-        if($user-&gt;save()){
-            return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
-        }else{
-            return \Response::json([&apos;register error&apos;],500);
-        }
-    }catch(DBALException $e){
-        return $e-&gt;getMessage();
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // 增加验证手机号码方法
+
+      \Validator::extend(&apos;phone&apos;,function($attribute,$value,$parameters,$validator){
+            return preg_match(&apos;/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\\d{8}$/&apos;,$value);
+      });
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }
-</code></pre><p>   就是注入CreateUserRequest实例 在app/http/Requests目录中</p>
-
+</code></pre>
             
         </div>
     </div>
@@ -235,7 +253,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/postman使用/"  data-tooltip="postman使用">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -243,7 +261,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel事件/" data-tooltip="laravel事件">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/git分支使用/" data-tooltip="git分支使用">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -258,17 +276,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -306,7 +324,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/postman使用/"  data-tooltip="postman使用">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -314,7 +332,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel事件/" data-tooltip="laravel事件">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/git分支使用/" data-tooltip="git分支使用">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -329,17 +347,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -359,17 +377,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel依赖注入/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel手机号验证规则/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
