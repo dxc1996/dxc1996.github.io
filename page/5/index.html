@@ -150,6 +150,234 @@
                 <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/14/vuex入门/">
+                            vuex入门
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-14T13:30:10+08:00">
+	
+		    2月 14, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>vuex安装使用</strong></p>
+<ul>
+<li><code>npm install vuex</code></li>
+<li>在main.js头部<code>import Vuex from &#39;vuex&#39;</code> <code>Vue.use(Vuex)</code></li>
+</ul>
+<pre><code>const store = new Vuex.Store({
+        state: {
+            user: {
+                id: 1,
+                name: &apos;user&apos; 
+            }
+        },
+        mutations: {
+            setUser(state,user){
+                state.user = user
+            }
+        }
+})
+</code></pre><ul>
+<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
+<li>就可以全局调用了 <code></code></li>
+</ul>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/14/vuex入门/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/14/vue-router/">
+                            vue-router
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-14T13:03:42+08:00">
+	
+		    2月 14, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>vue-router安装使用</strong></p>
+<ul>
+<li><code>npm install vue-router</code></li>
+<li>在main.js头部<code>import VueRouter from &#39;vue-router&#39;</code> <code>Vue.use(VueRouter)</code></li>
+</ul>
+<pre><code>const router = new VueRouter({
+       routes: [
+           {path: &apos;/&apos;, component:App},
+           {path: &apos;/login&apos;, component:Login},
+           {path: &apos;/news/:id&apos;, component:News}
+       ]
+})
+</code></pre><ul>
+<li>在main.js底部 <code>new Vue({     store,     router,   el: &#39;#app&#39; })</code></li>
+<li>在index.html中id=‘app’的div中 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
+</ul>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/14/vue-router/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/04/laravel-ide自动补全/">
+                            laravel ide自动补全
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-04T10:49:53+08:00">
+	
+		    2月 04, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">https://github.com/barryvdh/laravel-ide-helper</a></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/04/laravel-ide自动补全/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/01/11/jq-get-方法取不到元素/">
+                            jq get()方法取不到元素
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-01-11T09:48:49+08:00">
+	
+		    1月 11, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/前端/">前端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <pre><code>$($(&quot;#example-navbar-collapse&quot;).find(&quot;li&quot;).get(12)).addClass(&quot;active&quot;);
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/01/11/jq-get-方法取不到元素/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -203,202 +431,6 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/hexo-d无效的原因/">
-                            hexo d无效的原因
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:26:07+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>deploy:
-  type: git 
-  repo: git@github.com:yourname/yournamne.github.io.git 
-  branch: master
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/hexo-d无效的原因/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/php7-0composer报错/">
-                            php7.0composer报错
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:21:54+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/php7composererror" alt="php70composererrror"><br>
-                    
-                        <a href="/2017/01/10/php7-0composer报错/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/css样式整理/">
-                            css样式整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:48:53+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>一 字体属性：(font)</strong></p>
-<p>大小 {font-size: x-large;}(特大) xx-small;(极小) 一般中文用不到，只要用数值就可以，单位：PX、PD<br>样式 {font-style: oblique;}(偏斜体) italic;(斜体) normal;(正常)<br>行高 {line-height: normal;}(正常) 单位：PX、PD、EM<br>粗细 {font-weight: bold;}(粗体) lighter;(细体) normal;(正常)<br>变体 {font-variant: small-caps;}(小型大写字母) normal;(正常)<br>大小写 {text-transform: capitalize;}(首字母大写) uppercase;(大写) lowercase;(小写) none;(无)<br>
-                    
-                        <a href="/2017/01/10/css样式整理/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/ios表情处理转码存入数据库/">
-                            ios表情处理转码存入数据库
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:14:05+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="把用户输入的文本转义（主要针对特殊符号和emoji表情）"><a href="#把用户输入的文本转义（主要针对特殊符号和emoji表情）" class="headerlink" title="把用户输入的文本转义（主要针对特殊符号和emoji表情）"></a>把用户输入的文本转义（主要针对特殊符号和emoji表情）</h3><pre><code>function userTextEncode($str){
-    if(!is_string($str))return $str;
-    if(!$str || $str==&apos;undefined&apos;)return &apos;&apos;;
-
-    $text = json_encode($str); //暴露出unicode
-    $text = preg_replace_callback(&quot;/(\\\u[ed][0-9a-f]{3})/i&quot;,function($str){
-        return addslashes($str[0]);
-    },$text); //将emoji的unicode留下，其他不动，这里的正则比原答案增加了d，因为我发现我很多emoji实际上是\ud开头的，反而暂时没发现有\ue开头。
-    return json_decode($text);
-}
-</code></pre><h3 id="解码上面的转义"><a href="#解码上面的转义" class="headerlink" title="解码上面的转义"></a>解码上面的转义</h3><pre><code>function userTextDecode($str){
-    $text = json_encode($str); //暴露出unicode
-    $text = preg_replace_callback(&apos;/\\\\\\\\/i&apos;,function($str){
-        return &apos;\\&apos;;
-    },$text); //将两条斜杠变成一条，其他不动
-    return json_decode($text);
-}
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/ios表情处理转码存入数据库/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -419,7 +451,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
             </a>
         </li>
         
-        <li class="pagination-number">第 5 页 共 6 页</li>
+        <li class="pagination-number">第 5 页 共 7 页</li>
     </ul>
 </div>
 
@@ -595,7 +627,7 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 28 篇文章
+                找到 32 篇文章
             </p>
         </div>
     </div>
