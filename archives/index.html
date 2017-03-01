@@ -157,15 +157,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/02/28/laravel-admin常用方法/">
-                            laravel-admin常用方法
+                        <a class="link-unstyled" href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/">
+                            laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-28T13:50:53+08:00">
+    <time itemprop="datePublished" datetime="2017-03-01T09:49:29+08:00">
 	
-		    2月 28, 2017
+		    3月 01, 2017
     	
     </time>
     
@@ -180,13 +180,85 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    
+                    <pre><code> $grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
+                $data=[
+                    &apos;&apos;=&gt;&apos;未知&apos;,
+                    &apos;m&apos;=&gt;&apos;男&apos;,
+                    &apos;f&apos;=&gt;&apos;女&apos;,
+                ];
+                dd($data[$gender]);
+                return $data[$gender];
+})-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;f&apos; =&gt; &apos;女&apos;, &apos;m&apos; =&gt; &apos;男&apos;,]) ;`enter code here`
+</code></pre>
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/02/28/laravel-admin常用方法/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/01/laravel-admin数据模型树报错/">
+                            laravel-admin数据模型树报错
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T09:43:38+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>修改vender/encore/laravel-admin/views/tree/branch.blade.php里面的</p>
+<pre><code>@if(isset($branch[&apos;children&apos;]))
+    &lt;ol class=&quot;dd-list&quot;&gt;
+        @foreach($branch[&apos;children&apos;] as $branch)
+            @include($branchView, $branch)
+        @endforeach
+    &lt;/ol&gt;
+@endif
+</code></pre><p>为=》</p>
+<pre><code>@if(!empty($branch[&apos;children&apos;]))
+    &lt;ol class=&quot;dd-list&quot;&gt;
+        @foreach($branch[&apos;children&apos;] as $branch)
+            @include($branchView, $branch)
+        @endforeach
+    &lt;/ol&gt;
+@endif
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel-admin数据模型树报错/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -354,84 +426,6 @@
                     
                         <p>
                             <a href="/2017/02/27/laravel-migrate-ide不提醒/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/27/laravel手机号验证规则/">
-                            laravel手机号验证规则
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-27T11:31:33+08:00">
-	
-		    2月 27, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>在AppServiceProvider.php中加</p>
-<pre><code>namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        // 增加验证手机号码方法
-
-      \Validator::extend(&apos;phone&apos;,function($attribute,$value,$parameters,$validator){
-            return preg_match(&apos;/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\\d{8}$/&apos;,$value);
-      });
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-}
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/27/laravel手机号验证规则/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -630,7 +624,7 @@ class AppServiceProvider extends ServiceProvider
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 32 篇文章
+                找到 33 篇文章
             </p>
         </div>
     </div>

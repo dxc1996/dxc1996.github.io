@@ -157,6 +157,84 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/27/laravel手机号验证规则/">
+                            laravel手机号验证规则
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-27T11:31:33+08:00">
+	
+		    2月 27, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>在AppServiceProvider.php中加</p>
+<pre><code>namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // 增加验证手机号码方法
+
+      \Validator::extend(&apos;phone&apos;,function($attribute,$value,$parameters,$validator){
+            return preg_match(&apos;/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\\d{8}$/&apos;,$value);
+      });
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+}
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/27/laravel手机号验证规则/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/24/git分支使用/">
                             git分支使用
                         </a>
@@ -411,57 +489,6 @@ $factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/24/laravel数据库外键/">
-                            laravel数据库外键
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-24T11:14:06+08:00">
-	
-		    2月 24, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>给news表加外键</p>
-<pre><code>$table-&gt;foreign(&apos;user_id&apos;)-&gt;references(&apos;id&apos;)-&gt;on(&apos;users&apos;)-&gt;onDelete(&apos;set null&apos;);
-</code></pre><p>删除外键</p>
-<pre><code>$table-&gt;dropForeign([&apos;user_id&apos;]);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/24/laravel数据库外键/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -659,7 +686,7 @@ $factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 32 篇文章
+                找到 33 篇文章
             </p>
         </div>
     </div>

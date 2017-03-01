@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>标签: postman - 一路还要走多久。</title>
+    <title>归档: 2017/3 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/tags/postman/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一路还要走多久。">
@@ -157,15 +157,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/02/22/postman使用/">
-                            postman使用
+                        <a class="link-unstyled" href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/">
+                            laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T16:39:45+08:00">
+    <time itemprop="datePublished" datetime="2017-03-01T09:49:29+08:00">
 	
-		    2月 22, 2017
+		    3月 01, 2017
     	
     </time>
     
@@ -180,14 +180,85 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>若需要ajax请求  点击manage presets按钮设置header头X-Requested-With:XMLHttpRequest</strong></p>
-
+                    <pre><code> $grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
+                $data=[
+                    &apos;&apos;=&gt;&apos;未知&apos;,
+                    &apos;m&apos;=&gt;&apos;男&apos;,
+                    &apos;f&apos;=&gt;&apos;女&apos;,
+                ];
+                dd($data[$gender]);
+                return $data[$gender];
+})-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;f&apos; =&gt; &apos;女&apos;, &apos;m&apos; =&gt; &apos;男&apos;,]) ;`enter code here`
+</code></pre>
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/02/22/postman使用/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/01/laravel-admin数据模型树报错/">
+                            laravel-admin数据模型树报错
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T09:43:38+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>修改vender/encore/laravel-admin/views/tree/branch.blade.php里面的</p>
+<pre><code>@if(isset($branch[&apos;children&apos;]))
+    &lt;ol class=&quot;dd-list&quot;&gt;
+        @foreach($branch[&apos;children&apos;] as $branch)
+            @include($branchView, $branch)
+        @endforeach
+    &lt;/ol&gt;
+@endif
+</code></pre><p>为=》</p>
+<pre><code>@if(!empty($branch[&apos;children&apos;]))
+    &lt;ol class=&quot;dd-list&quot;&gt;
+        @foreach($branch[&apos;children&apos;] as $branch)
+            @include($branchView, $branch)
+        @endforeach
+    &lt;/ol&gt;
+@endif
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel-admin数据模型树报错/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -207,6 +278,7 @@
 </div>
 
 </section>
+
 
 
                 <footer id="footer" class="main-content-wrap">
