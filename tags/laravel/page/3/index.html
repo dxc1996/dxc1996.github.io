@@ -151,6 +151,135 @@
     <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/24/laravel数据库外键/">
+                            laravel数据库外键
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-24T11:14:06+08:00">
+	
+		    2月 24, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>给news表加外键</p>
+<pre><code>$table-&gt;foreign(&apos;user_id&apos;)-&gt;references(&apos;id&apos;)-&gt;on(&apos;users&apos;)-&gt;onDelete(&apos;set null&apos;);
+</code></pre><p>删除外键</p>
+<pre><code>$table-&gt;dropForeign([&apos;user_id&apos;]);
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/24/laravel数据库外键/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/02/22/laravel-jwt-auth使用/">
+                            laravel-jwt-auth使用
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-22T17:50:47+08:00">
+	
+		    2月 22, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>1、安装：<a href="https://github.com/tymondesigns/jwt-auth/wiki/Installation" target="_blank" rel="external">https://github.com/tymondesigns/jwt-auth/wiki/Installation</a><br>2、生成token    </p>
+<pre><code>public function login(Request $request){
+            $credentials = $request-&gt;only(&apos;mobile&apos;, &apos;password&apos;);
+            try {
+                if (! $token = JWTAuth::attempt($credentials)) {
+                    return \Response::json([&apos;error&apos; =&gt; &apos;账号或密码不正确&apos;], 401);
+                }
+                return [&quot;user&quot;=&gt;JWTAuth::toUser($token),&quot;token&quot;=&gt;$token];
+            } catch (JWTException $e) {
+                return \Response::json([&apos;error&apos; =&gt; &apos;could_not_create_token&apos;], 500);
+            }
+
+}
+</code></pre><p>3、根据token获取用户信息</p>
+<pre><code>public function store(CreateUserRequest $request)
+{
+
+       $user = new User();
+       $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
+       $user-&gt;password = $request-&gt;input(&apos;password&apos;);
+
+       try{
+           if($user-&gt;save()){
+               return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
+           }else{
+               return \Response::json([&apos;register error&apos;],500);
+           }
+       }catch(DBALException $e){
+           return $e-&gt;getMessage();
+       }
+}
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/22/laravel-jwt-auth使用/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -522,7 +651,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 34 篇文章
+                找到 36 篇文章
             </p>
         </div>
     </div>

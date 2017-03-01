@@ -157,6 +157,130 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/03/01/laravel通知/">
+                            laravel通知
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T17:05:07+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>执行<code>php artisan make:notification InvoicePaid</code>  创建通知</p>
+<pre><code>public function via($notifiable)
+    {
+        $to = $notifiable-&gt;mobile;
+        $code = mt_rand(10000,99999);
+        $minutes = 5;
+        // 短信内容
+        $content = &apos;【xx】亲爱的用户，您的验证码是&apos; . $code . &apos;。有效期为&apos; . $minutes . &apos;分钟，请尽快验证。&apos;;
+        // 只希望使用内容方式放送,可以不设置模板id和模板data(如:云片、luosimao)
+        dd(\PhpSms::make()-&gt;to($to)-&gt;content($content)-&gt;send());
+
+        //        return [&apos;PhpSms&apos;];
+    }
+</code></pre><p>因为没有国内的短信发送包 所以把发短信代码写在via()方法里<br>使用通知:<code>\Notification::send($event,new SendSms($event));</code></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel通知/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/01/laravel-sms-luosimao服务短信发送失败/">
+                            laravel-sms luosimao短息发送失败
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T15:01:13+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170301150346.png" alt=""><br>再用laravel-sms短信扩展的时候发现lusoimao怎么发送短信返回值为</p>
+<pre><code>[
+    {
+        &quot;driver&quot;: &quot;Luosimao&quot;,
+        &quot;time&quot;: {
+            &quot;started_at&quot;: &quot;0.12135700 1488351377&quot;,
+            &quot;finished_at&quot;: &quot;0.15184700 1488351377&quot;
+        },
+        &quot;success&quot;: false,
+        &quot;result&quot;: {
+            &quot;info&quot;: false,
+            &quot;code&quot;: 0
+        }
+    }
+]
+</code></pre><p>最后发现是因为laravel-sms包里面<code>vendor/toplan/phpsms/src/phpsms/agents/LuosimaoAgent.php</code>里面的url地址用的https的格式 而官方给的文档则是http<br><img src="http://ojjot6x9l.bkt.clouddn.com/23131312135.png" alt=""></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel-sms-luosimao服务短信发送失败/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/">
                             laravel事件报错must be an instance of Illuminate/Foundation/Auth/User
                         </a>
@@ -301,120 +425,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/03/01/laravel-admin数据模型树报错/">
-                            laravel-admin数据模型树报错
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-03-01T09:43:38+08:00">
-	
-		    3月 01, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>修改vender/encore/laravel-admin/views/tree/branch.blade.php里面的</p>
-<pre><code>@if(isset($branch[&apos;children&apos;]))
-    &lt;ol class=&quot;dd-list&quot;&gt;
-        @foreach($branch[&apos;children&apos;] as $branch)
-            @include($branchView, $branch)
-        @endforeach
-    &lt;/ol&gt;
-@endif
-</code></pre><p>为=》</p>
-<pre><code>@if(!empty($branch[&apos;children&apos;]))
-    &lt;ol class=&quot;dd-list&quot;&gt;
-        @foreach($branch[&apos;children&apos;] as $branch)
-            @include($branchView, $branch)
-        @endforeach
-    &lt;/ol&gt;
-@endif
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/03/01/laravel-admin数据模型树报错/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/">
-                            laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-28T13:39:52+08:00">
-	
-		    2月 28, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$grid-&gt;username(&apos;用户名&apos;)-&gt;editable();
-</code></pre><p> <strong>修改后 提示修改成功  但是修改后页面刷新 无变化</strong></p>
-<p> <strong>原因：没有在form()方法里面写这个字段</strong></p>
-<pre><code>$form-&gt;text(&apos;username&apos;,&apos;用户名&apos;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -426,7 +436,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 7 页</li>
+        <li class="pagination-number">第 1 页 共 8 页</li>
     </ul>
 </div>
 
@@ -603,7 +613,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 34 篇文章
+                找到 36 篇文章
             </p>
         </div>
     </div>
