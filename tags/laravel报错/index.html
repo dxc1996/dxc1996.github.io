@@ -6,29 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>laravel-jwt-auth使用 - 一路还要走多久。</title>
+    <title>标签: laravel报错 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="laravel-jwt-auth使用">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/laravel-jwt-auth使用/index.html">
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="一路还要走多久。">
+<meta property="og:url" content="http://yoursite.com/tags/laravel报错/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
-<meta property="og:updated_time" content="2017-02-22T09:56:35.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel-jwt-auth使用">
-<meta name="twitter:description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
+<meta name="twitter:title" content="一路还要走多久。">
     
     
         
@@ -57,7 +47,7 @@ public function login(Request $request){
         
     
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">一路还要走多久。</a>
@@ -81,7 +71,7 @@ public function login(Request $request){
         
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="1">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -153,24 +143,29 @@ public function login(Request $request){
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <section class="postShorten-group main-content-wrap">
     
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            laravel-jwt-auth使用
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T17:50:47+08:00">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/">
+                            laravel事件报错must be an instance of Illuminate/Foundation/Auth/User
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T11:40:42+08:00">
 	
-		    2月 22, 2017
+		    3月 01, 2017
     	
     </time>
     
@@ -182,114 +177,37 @@ public function login(Request $request){
     
 </div>
 
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <p>1、安装：<a href="https://github.com/tymondesigns/jwt-auth/wiki/Installation" target="_blank" rel="external">https://github.com/tymondesigns/jwt-auth/wiki/Installation</a><br>2、生成token    </p>
-<pre><code>public function login(Request $request){
-            $credentials = $request-&gt;only(&apos;mobile&apos;, &apos;password&apos;);
-            try {
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return \Response::json([&apos;error&apos; =&gt; &apos;账号或密码不正确&apos;], 401);
-                }
-                return [&quot;user&quot;=&gt;JWTAuth::toUser($token),&quot;token&quot;=&gt;$token];
-            } catch (JWTException $e) {
-                return \Response::json([&apos;error&apos; =&gt; &apos;could_not_create_token&apos;], 500);
-            }
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <pre><code>Argument 1 passed to App\Events\LoginNotice::__construct() must be an instance of Illuminate\Foundation\Auth\User, instance of App\Models\User given, called in 
+</code></pre><p>是因为在事件里用了Illuminate\Foundation\Auth\User这个命名空间下的User  而应该用App\Models\Use</p>
 
-}
-</code></pre><p>3、根据token获取用户信息</p>
-<pre><code>public function store(CreateUserRequest $request)
-{
-
-       $user = new User();
-       $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
-       $user-&gt;password = $request-&gt;input(&apos;password&apos;);
-
-       try{
-           if($user-&gt;save()){
-               return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
-           }else{
-               return \Response::json([&apos;register error&apos;],500);
-           }
-       }catch(DBALException $e){
-           return $e-&gt;getMessage();
-       }
-}
-</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
             
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/laravel/">laravel</a>
-
-            </div>
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/laravel数据库外键/"  data-tooltip="laravel数据库外键">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel跨域/" data-tooltip="laravel跨域">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
-
-        
-            
-        
-    </div>
-</article>
-
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -299,84 +217,6 @@ public function login(Request $request){
 </footer>
 
             </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/laravel数据库外键/"  data-tooltip="laravel数据库外键">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel跨域/" data-tooltip="laravel跨域">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
-
             
         </div>
         
@@ -549,8 +389,6 @@ public function login(Request $request){
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
-
-    
 
 
 
