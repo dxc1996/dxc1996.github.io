@@ -157,6 +157,61 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/03/02/laravel-api-restful风格api接口路由规范/">
+                            laravel-api-restful风格api接口路由规范
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-02T16:00:29+08:00">
+	
+		    3月 02, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>//查看新闻列表</p>
+<pre><code>Route::get(&apos;news&apos;, &apos;NewsController@index&apos; );
+</code></pre><p>//查看单条新闻</p>
+<pre><code>Route::get(&apos;news/{id}&apos;, &apos;NewsController@show&apos; );\
+</code></pre><p>//修改新闻</p>
+<pre><code>Route::post(&apos;news/{id}&apos;, &apos;NewsController@update&apos; );
+</code></pre><p>//新增新闻</p>
+<pre><code>Route::post(&apos;news&apos;, &apos;NewsController@store&apos; );
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/02/laravel-api-restful风格api接口路由规范/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/03/01/laravel通知/">
                             laravel通知
                         </a>
@@ -393,57 +448,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/">
-                            laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-28T13:39:52+08:00">
-	
-		    2月 28, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$grid-&gt;username(&apos;用户名&apos;)-&gt;editable();
-</code></pre><p> <strong>修改后 提示修改成功  但是修改后页面刷新 无变化</strong></p>
-<p> <strong>原因：没有在form()方法里面写这个字段</strong></p>
-<pre><code>$form-&gt;text(&apos;username&apos;,&apos;用户名&apos;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -455,7 +459,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 3 页</li>
+        <li class="pagination-number">第 1 页 共 4 页</li>
     </ul>
 </div>
 
@@ -631,7 +635,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 37 篇文章
+                找到 38 篇文章
             </p>
         </div>
     </div>
