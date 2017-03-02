@@ -150,6 +150,67 @@
                 <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/02/laravel多态关联/">
+                            laravel多态关联
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-02T15:25:25+08:00">
+	
+		    3月 02, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>1、在model里面定义关联</p>
+<pre><code>public function likes()
+{
+    return $this-&gt;morphmany(&apos;App\Models\Like&apos;,&apos;likeable&apos;);
+}
+</code></pre><p>2、在model定义一个是否点赞的方法</p>
+<pre><code>public function getIsLikedAttribute()
+{
+    return $this-&gt;likes()-&gt;count() &gt; 0;
+}    
+</code></pre><p>3、在本地环境登录用户</p>
+<pre><code>在app/Providers/AppServiceProvider.php中的boot()方法中注册用户
+
+public function boot()
+{
+    //todo test login
+    \Auth::setUser(User::find(1));
+}
+</code></pre>
+                    
+                        <a href="/2017/03/02/laravel多态关联/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -368,62 +429,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/">
-                            laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-03-01T09:49:29+08:00">
-	
-		    3月 01, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code> $grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
-                $data=[
-                    &apos;&apos;=&gt;&apos;未知&apos;,
-                    &apos;m&apos;=&gt;&apos;男&apos;,
-                    &apos;f&apos;=&gt;&apos;女&apos;,
-                ];
-                dd($data[$gender]);
-                return $data[$gender];
-})-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;f&apos; =&gt; &apos;女&apos;, &apos;m&apos; =&gt; &apos;男&apos;,]) ;
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -611,7 +616,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 36 篇文章
+                找到 37 篇文章
             </p>
         </div>
     </div>
