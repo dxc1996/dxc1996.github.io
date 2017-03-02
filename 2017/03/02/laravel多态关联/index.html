@@ -35,7 +35,7 @@ public function likes()
 public function getIsLikedAttribute()
 {
     return $thi">
-<meta property="og:updated_time" content="2017-03-02T07:59:18.000Z">
+<meta property="og:updated_time" content="2017-03-02T08:55:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel多态关联">
 <meta name="twitter:description" content="1、在model里面定义关联
@@ -238,6 +238,8 @@ public function boot()
         &apos;is_like&apos; =&gt; !$like,
     ];
 }
+</code></pre><p>5、多态关联建立以后 在controller就可以直接把关联当属性来用</p>
+<pre><code>$news-&gt;likes;
 </code></pre><p><strong>付：此功能比较优雅的实现方式</strong></p>
 <p>1、创建一个LikeTrait.php的trait</p>
 <pre><code>namespace App\Traits;
