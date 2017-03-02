@@ -29,7 +29,7 @@ Route::get(&amp;apos;news&amp;apos;, &amp;apos;NewsController@index&amp;apos; );
 Route::get(&amp;apos;news/{id}&amp;apos;, &amp;apos;NewsController@show&amp;apos; );\
 //修改新闻
 Route::post(&amp;apos;news/{id}&amp;apos;, &amp;apos">
-<meta property="og:updated_time" content="2017-03-02T08:11:46.000Z">
+<meta property="og:updated_time" content="2017-03-02T08:13:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-api-restful风格api接口路由规范">
 <meta name="twitter:description" content="//查看新闻列表
@@ -203,6 +203,8 @@ Route::post(&amp;apos;news/{id}&amp;apos;, &amp;apos">
 <pre><code>Route::post(&apos;news/{id}&apos;, &apos;NewsController@update&apos; );
 </code></pre><p>//新增新闻</p>
 <pre><code>Route::post(&apos;news&apos;, &apos;NewsController@store&apos; );
+</code></pre><p>//点赞接口</p>
+<pre><code>Route::post(&apos;news/{id}/like&apos;, &apos;NewsController@like&apos; );
 </code></pre>
             
         </div>

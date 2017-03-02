@@ -187,6 +187,8 @@
 <pre><code>Route::post(&apos;news/{id}&apos;, &apos;NewsController@update&apos; );
 </code></pre><p>//新增新闻</p>
 <pre><code>Route::post(&apos;news&apos;, &apos;NewsController@store&apos; );
+</code></pre><p>//点赞接口</p>
+<pre><code>Route::post(&apos;news/{id}/like&apos;, &apos;NewsController@like&apos; );
 </code></pre>
                     
                         
