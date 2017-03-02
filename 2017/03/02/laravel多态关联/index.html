@@ -35,7 +35,7 @@ public function likes()
 public function getIsLikedAttribute()
 {
     return $thi">
-<meta property="og:updated_time" content="2017-03-02T08:55:15.000Z">
+<meta property="og:updated_time" content="2017-03-02T09:00:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel多态关联">
 <meta name="twitter:description" content="1、在model里面定义关联
@@ -268,10 +268,9 @@ trait LikeTrait
     return $query-&gt;where($field, \Auth::id());
 }
 </code></pre><p>4、然后NewsController.php中的方法就该这样写：</p>
-<pre><code>在class中use LikeTrait；然后定义public $class = News::class;
+<pre><code>定义public $class = News::class;
 class NewsController extends Controller
 {
-    use LikeTrait；
     public $class = News::class;
 
     /**
