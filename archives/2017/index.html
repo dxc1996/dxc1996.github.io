@@ -157,200 +157,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/03/03/laravel语言包/">
-                            laravel语言包
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-03-03T09:34:51+08:00">
-	
-		    3月 03, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>&lt;?php</p>
-<p>return [</p>
-<pre><code>/*
-|--------------------------------------------------------------------------
-| Validation Language Lines
-|--------------------------------------------------------------------------
-|
-| The following language lines contain the default error messages used by
-| the validator class. Some of these rules have multiple versions such
-| such as the size rules. Feel free to tweak each of these messages.
-|
-*/
-
-&apos;accepted&apos;             =&gt; &apos;:attribute必须接受。&apos;,
-&apos;active_url&apos;           =&gt; &apos;:attribute不是一个有效的网址。&apos;,
-&apos;after&apos;                =&gt; &apos;:attribute必须要晚于:date。&apos;,
-&apos;after_or_equal&apos;       =&gt; &apos;:attribute必须要等于:date或更晚。&apos;,
-&apos;alpha&apos;                =&gt; &apos;:attribute只能由字母组成。&apos;,
-&apos;alpha_dash&apos;           =&gt; &apos;:attribute只能由字母、数字和斜杠组成。&apos;,
-&apos;alpha_num&apos;            =&gt; &apos;:attribute只能由字母和数字组成。&apos;,
-&apos;array&apos;                =&gt; &apos;:attribute必须是一个数组。&apos;,
-&apos;before&apos;               =&gt; &apos;:attribute必须要早于:date。&apos;,
-&apos;before_or_equal&apos;      =&gt; &apos;:attribute必须要等于:date或更早。&apos;,
-&apos;between&apos;              =&gt; [
-    &apos;numeric&apos; =&gt; &apos;:attribute必须介于:min-:max之间。&apos;,
-    &apos;file&apos;    =&gt; &apos;:attribute必须介于:min-:max kb 之间。&apos;,
-    &apos;string&apos;  =&gt; &apos;:attribute必须介于:min-:max个字符之间。&apos;,
-    &apos;array&apos;   =&gt; &apos;:attribute必须只有:min-:max个单元。&apos;,
-],
-&apos;boolean&apos;              =&gt; &apos;:attribute必须为布尔值。&apos;,
-&apos;confirmed&apos;            =&gt; &apos;:attribute两次输入不一致。&apos;,
-&apos;date&apos;                 =&gt; &apos;:attribute不是一个有效的日期。&apos;,
-&apos;date_format&apos;          =&gt; &apos;:attribute的格式必须为:format。&apos;,
-&apos;different&apos;            =&gt; &apos;:attribute和:other必须不同。&apos;,
-&apos;digits&apos;               =&gt; &apos;:attribute必须是:digits位的数字。&apos;,
-&apos;digits_between&apos;       =&gt; &apos;:attribute必须是介于:min和:max位的数字。&apos;,
-&apos;dimensions&apos;           =&gt; &apos;:attribute图片尺寸不正确。&apos;,
-&apos;distinct&apos;             =&gt; &apos;:attribute已经存在。&apos;,
-&apos;email&apos;                =&gt; &apos;:attribute不是一个合法的邮箱。&apos;,
-&apos;exists&apos;               =&gt; &apos;:attribute不存在。&apos;,
-&apos;file&apos;                 =&gt; &apos;:attribute必须是文件。&apos;,
-&apos;filled&apos;               =&gt; &apos;:attribute不能为空。&apos;,
-&apos;image&apos;                =&gt; &apos;:attribute必须是图片。&apos;,
-&apos;in&apos;                   =&gt; &apos;已选的属性:attribute非法。&apos;,
-&apos;in_array&apos;             =&gt; &apos;:attribute没有在:other中。&apos;,
-&apos;integer&apos;              =&gt; &apos;:attribute必须是整数。&apos;,
-&apos;ip&apos;                   =&gt; &apos;:attribute必须是有效的 IP 地址。&apos;,
-&apos;json&apos;                 =&gt; &apos;:attribute必须是正确的 JSON 格式。&apos;,
-&apos;max&apos;                  =&gt; [
-    &apos;numeric&apos; =&gt; &apos;:attribute不能大于:max。&apos;,
-    &apos;file&apos;    =&gt; &apos;:attribute不能大于:max kb。&apos;,
-    &apos;string&apos;  =&gt; &apos;:attribute不能大于:max个字符。&apos;,
-    &apos;array&apos;   =&gt; &apos;:attribute最多只有:max个单元。&apos;,
-],
-&apos;mimes&apos;                =&gt; &apos;:attribute必须是一个:values类型的文件。&apos;,
-&apos;mimetypes&apos;            =&gt; &apos;:attribute必须是一个:values类型的文件。&apos;,
-&apos;min&apos;                  =&gt; [
-    &apos;numeric&apos; =&gt; &apos;:attribute必须大于等于:min。&apos;,
-    &apos;file&apos;    =&gt; &apos;:attribute大小不能小于:min kb。&apos;,
-    &apos;string&apos;  =&gt; &apos;:attribute至少为:min个字符。&apos;,
-    &apos;array&apos;   =&gt; &apos;:attribute至少有:min个单元。&apos;,
-],
-&apos;not_in&apos;               =&gt; &apos;已选的属性:attribute非法。&apos;,
-&apos;numeric&apos;              =&gt; &apos;:attribute必须是一个数字。&apos;,
-&apos;present&apos;              =&gt; &apos;:attribute必须存在。&apos;,
-&apos;regex&apos;                =&gt; &apos;:attribute格式不正确。&apos;,
-&apos;required&apos;             =&gt; &apos;:attribute不能为空。&apos;,
-&apos;required_if&apos;          =&gt; &apos;当:other为:value时:attribute不能为空。&apos;,
-&apos;required_unless&apos;      =&gt; &apos;当:other不为:value时:attribute不能为空。&apos;,
-&apos;required_with&apos;        =&gt; &apos;当:values存在时:attribute不能为空。&apos;,
-&apos;required_with_all&apos;    =&gt; &apos;当:values存在时:attribute不能为空。&apos;,
-&apos;required_without&apos;     =&gt; &apos;当:values不存在时:attribute不能为空。&apos;,
-&apos;required_without_all&apos; =&gt; &apos;当:values都不存在时:attribute不能为空。&apos;,
-&apos;same&apos;                 =&gt; &apos;:attribute和:other必须相同。&apos;,
-&apos;size&apos;                 =&gt; [
-    &apos;numeric&apos; =&gt; &apos;:attribute大小必须为:size。&apos;,
-    &apos;file&apos;    =&gt; &apos;:attribute大小必须为:size kb。&apos;,
-    &apos;string&apos;  =&gt; &apos;:attribute必须是:size个字符。&apos;,
-    &apos;array&apos;   =&gt; &apos;:attribute必须为:size个单元。&apos;,
-],
-&apos;string&apos;               =&gt; &apos;:attribute必须是一个字符串。&apos;,
-&apos;timezone&apos;             =&gt; &apos;:attribute必须是一个合法的时区值。&apos;,
-&apos;unique&apos;               =&gt; &apos;:attribute已经存在。&apos;,
-&apos;uploaded&apos;             =&gt; &apos;:attribute上传失败。&apos;,
-&apos;url&apos;                  =&gt; &apos;:attribute格式不正确。&apos;,
-&apos;mobile&apos;                  =&gt; &apos;:attribute格式不正确。&apos;,
-
-/*
-|--------------------------------------------------------------------------
-| Custom Validation Language Lines
-|--------------------------------------------------------------------------
-|
-| Here you may specify custom validation messages for attributes using the
-| convention &apos;attribute.rule&apos; to name the lines. This makes it quick to
-| specify a specific custom language line for a given attribute rule.
-|
-*/
-
-&apos;custom&apos;               =&gt; [
-    &apos;attribute-name&apos; =&gt; [
-        &apos;rule-name&apos; =&gt; &apos;custom-message&apos;,
-    ],
-],
-
-/*
-|--------------------------------------------------------------------------
-| Custom Validation Attributes
-|--------------------------------------------------------------------------
-|
-| The following language lines are used to swap attribute place-holders
-| with something more reader friendly such as E-Mail Address instead
-| of &apos;email&apos;. This simply helps us make messages a little cleaner.
-|
-*/
-
-&apos;attributes&apos;           =&gt; [
-    &apos;name&apos;                  =&gt; &apos;名称&apos;,
-    &apos;username&apos;              =&gt; &apos;用户名&apos;,
-    &apos;email&apos;                 =&gt; &apos;邮箱&apos;,
-    &apos;first_name&apos;            =&gt; &apos;名&apos;,
-    &apos;last_name&apos;             =&gt; &apos;姓&apos;,
-    &apos;password&apos;              =&gt; &apos;密码&apos;,
-    &apos;password_confirmation&apos; =&gt; &apos;确认密码&apos;,
-    &apos;city&apos;                  =&gt; &apos;城市&apos;,
-    &apos;country&apos;               =&gt; &apos;国家&apos;,
-    &apos;address&apos;               =&gt; &apos;地址&apos;,
-    &apos;phone&apos;                 =&gt; &apos;电话&apos;,
-    &apos;mobile&apos;                =&gt; &apos;手机号&apos;,
-    &apos;age&apos;                   =&gt; &apos;年龄&apos;,
-    &apos;sex&apos;                   =&gt; &apos;性别&apos;,
-    &apos;gender&apos;                =&gt; &apos;性别&apos;,
-    &apos;day&apos;                   =&gt; &apos;天&apos;,
-    &apos;month&apos;                 =&gt; &apos;月&apos;,
-    &apos;year&apos;                  =&gt; &apos;年&apos;,
-    &apos;hour&apos;                  =&gt; &apos;时&apos;,
-    &apos;minute&apos;                =&gt; &apos;分&apos;,
-    &apos;second&apos;                =&gt; &apos;秒&apos;,
-    &apos;title&apos;                 =&gt; &apos;标题&apos;,
-    &apos;content&apos;               =&gt; &apos;内容&apos;,
-    &apos;description&apos;           =&gt; &apos;描述&apos;,
-    &apos;excerpt&apos;               =&gt; &apos;摘要&apos;,
-    &apos;date&apos;                  =&gt; &apos;日期&apos;,
-    &apos;time&apos;                  =&gt; &apos;时间&apos;,
-    &apos;available&apos;             =&gt; &apos;可用的&apos;,
-    &apos;size&apos;                  =&gt; &apos;大小&apos;,
-],
-</code></pre><p>];</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/03/03/laravel语言包/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
                         <a class="link-unstyled" href="/2017/03/02/laravel-api-restful风格api接口路由规范/">
                             laravel-api-restful风格api接口路由规范
                         </a>
@@ -586,6 +392,55 @@ public function boot()
         
     </article>
     
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/">
+                            laravel事件报错must be an instance of Illuminate/Foundation/Auth/User
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T11:40:42+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <pre><code>Argument 1 passed to App\Events\LoginNotice::__construct() must be an instance of Illuminate\Foundation\Auth\User, instance of App\Models\User given, called in 
+</code></pre><p>是因为在事件里用了Illuminate\Foundation\Auth\User这个命名空间下的User  而应该用App\Models\User</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -774,7 +629,7 @@ public function boot()
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 39 篇文章
+                找到 38 篇文章
             </p>
         </div>
     </div>
