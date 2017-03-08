@@ -157,6 +157,64 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/01/10/ios表情处理转码存入数据库/">
+                            ios表情处理转码存入数据库
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-01-10T10:14:05+08:00">
+	
+		    1月 10, 2017
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="把用户输入的文本转义（主要针对特殊符号和emoji表情）"><a href="#把用户输入的文本转义（主要针对特殊符号和emoji表情）" class="headerlink" title="把用户输入的文本转义（主要针对特殊符号和emoji表情）"></a>把用户输入的文本转义（主要针对特殊符号和emoji表情）</h3><pre><code>function userTextEncode($str){
+    if(!is_string($str))return $str;
+    if(!$str || $str==&apos;undefined&apos;)return &apos;&apos;;
+
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&quot;/(\\\u[ed][0-9a-f]{3})/i&quot;,function($str){
+        return addslashes($str[0]);
+    },$text); //将emoji的unicode留下，其他不动，这里的正则比原答案增加了d，因为我发现我很多emoji实际上是\ud开头的，反而暂时没发现有\ue开头。
+    return json_decode($text);
+}
+</code></pre><h3 id="解码上面的转义"><a href="#解码上面的转义" class="headerlink" title="解码上面的转义"></a>解码上面的转义</h3><pre><code>function userTextDecode($str){
+    $text = json_encode($str); //暴露出unicode
+    $text = preg_replace_callback(&apos;/\\\\\\\\/i&apos;,function($str){
+        return &apos;\\&apos;;
+    },$text); //将两条斜杠变成一条，其他不动
+    return json_decode($text);
+}
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/01/10/ios表情处理转码存入数据库/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/01/10/phpstorm索引慢排除特定的资源目录/">
                             phpstorm索引慢排除特定的资源目录
                         </a>
@@ -483,7 +541,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 38 篇文章
+                找到 39 篇文章
             </p>
         </div>
     </div>

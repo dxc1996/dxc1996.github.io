@@ -6,19 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>归档: 2017/1 - 一路还要走多久。</title>
+    <title>laravel-通知 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/archives/2017/01/index.html">
+    <meta name="description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
+假设我们需要一个给dingding群推送消息
+第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="laravel-通知">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/laravel通知/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
+<meta property="og:description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
+假设我们需要一个给dingding群推送消息
+第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
+<meta property="og:updated_time" content="2017-03-08T07:02:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一路还要走多久。">
+<meta name="twitter:title" content="laravel-通知">
+<meta name="twitter:description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
+假设我们需要一个给dingding群推送消息
+第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
     
     
         
@@ -47,7 +57,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">一路还要走多久。</a>
@@ -71,7 +81,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -143,77 +153,24 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/11/jq-get-方法取不到元素/">
-                            jq get()方法取不到元素
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:48:49+08:00">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            laravel-通知
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-03-08T14:30:51+08:00">
 	
-		    1月 11, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$($(&quot;#example-navbar-collapse&quot;).find(&quot;li&quot;).get(12)).addClass(&quot;active&quot;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/11/jq-get-方法取不到元素/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/11/js跨域/">
-                            js跨域
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-11T09:42:04+08:00">
-	
-		    1月 11, 2017
+		    3月 08, 2017
     	
     </time>
     
@@ -225,187 +182,139 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>js跨域</strong><br>利用了script src没有同源限制，进行跨域请求。例如，www.a.com 想请求 www.b.com 的内容</p>
-<pre><code>//a网站的请求页：
-&lt;script&gt;
- function jsonp(json){
-    //对返回的json数据的处理
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了</p>
+<p>假设我们需要一个给dingding群推送消息</p>
+<p>第一步我们要生成这个通知<br>php artisan make:notification SendNotice<br>接下来我们需要去自定义这个通知了</p>
+<a id="more"></a>
+<p>1、在SendNotice要写via()和toDIngding()方法</p>
+<pre><code>public function via($notifiable)
+{
+    return [DingdingChannel::class, &apos;database&apos;];
 }
-&lt;/script&gt;
-&lt;script src=&quot;http;//www.b.com/jsonp.js&quot;&gt;&lt;/script&gt;
+public function toDingding($notifiable)
+{
+    return (new DingdingMessage())
+        -&gt;content(&apos;你好&apos;);
+}
+</code></pre><p>2、定义需要的Channels叫DingdingChannel.php</p>
+<p><strong>注:</strong> 请求第三方接口的时候需要使用guzzlehttp/guzzle这个扩展</p>
+<p>DingdingChannel.php的作用就是去发送这个通知 所以里面要写send这个方法</p>
+<pre><code>class DingdingChannel
+{
+    public function send($notifiable, Notification $notification)
+    {
+        $client = new Client();
+        $message = $notification-&gt;toDingding();
+        $to = $notifiable-&gt;routeNotificationFor(&apos;dingding&apos;);
+        $ret = $client-&gt;request(&apos;POST&apos;, $to, [
+            &apos;verify&apos; =&gt; false,
+            &apos;json&apos; =&gt; [
+                &apos;msgtype&apos; =&gt; &apos;text&apos;,
+                &apos;text&apos; =&gt; [
+                    &apos;content&apos; =&gt; $message-&gt;content
+                ]
+            ]
+        ]);
+    }
+}
+</code></pre><p>3、定义Message叫做DIngdingMessage.php,上面toDingding()里面new的那个对象就是这里的Message</p>
+<pre><code>class DingdingMessage
+{
+    public $content;
 
-//b网站的jsonp.js 响应页
-jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
+    public function content($content)
+    {
+        $this-&gt;content = $content;
+        return $this;
+    }
+}
+</code></pre><p>4、通过官方文档和官方写的MailMessage，MaileChannel文件 我们发现我们可以通过在User.php这个model里面通过写</p>
+<pre><code>public function routeNotificationForDingding()
+{
+    return env(&apos;DINGDING_HOOK&apos;);
+}
+</code></pre><p>把需要的第三方接口url地址放到.env文件里  通过这样可以让DingdingChannels通过 $notifiable-&gt;routeNotificationFor(‘dingding’);获取url地址</p>
+<p>假设我们需要给用户发送短信，用户的手机号我们也可以通过这种方式传给SmsChannel.php使用$notifiable-&gt;routeNotificationFor(‘sms’)获取</p>
+<pre><code>public function routeNotificationForSms()
+{
+    return $this-&gt;mobile;
+}
 </code></pre>
-                    
-                        <a href="/2017/01/11/js跨域/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/hexo-d无效的原因/">
-                            hexo d无效的原因
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:26:07+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/laravel/">laravel</a>
 
             </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>deploy:
-  type: git 
-  repo: git@github.com:yourname/yournamne.github.io.git 
-  branch: master
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/01/10/hexo-d无效的原因/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/php7-0composer报错/">
-                            php7.0composer报错
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T13:21:54+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/php7composererror" alt="php70composererrror"><br>
-                    
-                        <a href="/2017/01/10/php7-0composer报错/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/10/css样式整理/">
-                            css样式整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-01-10T10:48:53+08:00">
-	
-		    1月 10, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><strong>一 字体属性：(font)</strong></p>
-<p>大小 {font-size: x-large;}(特大) xx-small;(极小) 一般中文用不到，只要用数值就可以，单位：PX、PD<br>样式 {font-style: oblique;}(偏斜体) italic;(斜体) normal;(正常)<br>行高 {line-height: normal;}(正常) 单位：PX、PD、EM<br>粗细 {font-weight: bold;}(粗体) lighter;(细体) normal;(正常)<br>变体 {font-variant: small-caps;}(小型大写字母) normal;(正常)<br>大小写 {text-transform: capitalize;}(首字母大写) uppercase;(大写) lowercase;(小写) none;(无)<br>
-                    
-                        <a href="/2017/01/10/css样式整理/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/archives/2017/01/page/2/">
-                    <span>下一页</span>
-                <i class="fa fa-angle-right text-base icon-ml"></i>
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/02/laravel-api-restful风格api接口路由规范/" data-tooltip="laravel-api-restful风格api接口路由规范">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 2 页</li>
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+        
+    </div>
+</article>
 
 
 
@@ -416,6 +325,84 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/02/laravel-api-restful风格api接口路由规范/" data-tooltip="laravel-api-restful风格api接口路由规范">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/08/laravel通知/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
             
         </div>
         
@@ -588,6 +575,8 @@ jsonp({&apos;name&apos;:&apos;amy&apos;,age:22})
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
 

@@ -157,6 +157,76 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/27/laravel-migrate-ide不提醒/">
+                            laravel-migrate  ide不提醒
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-27T16:48:43+08:00">
+	
+		    2月 27, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>修改app/config/ide-helper.php </p>
+<pre><code>/*
+|--------------------------------------------------------------------------
+| Fluent helpers
+|--------------------------------------------------------------------------
+|
+| Set to true to generate commonly used Fluent methods
+|
+*/
+
+&apos;include_fluent&apos; =&gt; true,
+
+/*
+|--------------------------------------------------------------------------
+| Helper files to include
+|--------------------------------------------------------------------------
+|
+| Include helper files. By default not included, but can be toggled with the
+| -- helpers (-H) option. Extra helper files can be included.
+|
+*/
+
+&apos;include_helpers&apos; =&gt; true,
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/02/27/laravel-migrate-ide不提醒/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/02/27/laravel手机号验证规则/">
                             laravel手机号验证规则
                         </a>
@@ -413,82 +483,6 @@ class AppServiceProvider extends ServiceProvider
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/24/laravel工厂模式填充数据/">
-                            laravel工厂模式填充数据
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-24T13:06:28+08:00">
-	
-		    2月 24, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>工厂模式填充数据</p>
-<pre><code>$factory-&gt;define(App\Models\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        &apos;name&apos; =&gt; $faker-&gt;name,
-        &apos;email&apos; =&gt; $faker-&gt;safeEmail,
-        &apos;mobile&apos; =&gt; $faker-&gt;phoneNumber,
-        &apos;password&apos; =&gt; $password ?: $password = bcrypt(&apos;123456&apos;),
-        &apos;remember_token&apos; =&gt; str_random(10),
-    ];
-});
-
-$factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
-    return [
-        &apos;title&apos; =&gt; $faker-&gt;sentence,
-        &apos;user_id&apos; =&gt; mt_rand(1, 100),
-        &apos;content&apos; =&gt; $faker-&gt;paragraph(6),
-    ];
-});
-
-使用前在app\AppServiceProvider register方法
- public function register()
-{
-    $this-&gt;app-&gt;bind(&apos;Faker\Generator&apos;, function () {
-        return Factory::create(&apos;zh_CN&apos;);
-    });
-}
-配置成zh_CN 会自生成国内的手机号名字。
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/24/laravel工厂模式填充数据/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -686,7 +680,7 @@ $factory-&gt;define(App\Models\News::class, function (Faker\Generator $faker) {
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 38 篇文章
+                找到 39 篇文章
             </p>
         </div>
     </div>
