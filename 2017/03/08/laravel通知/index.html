@@ -15,20 +15,26 @@
     
     <meta name="description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
 假设我们需要一个给dingding群推送消息
-第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
+逻辑是这样的:
+当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&amp;apos;mail&amp;apos;]
+然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="laravel-通知">
 <meta property="og:url" content="http://yoursite.com/2017/03/08/laravel通知/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta property="og:description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
 假设我们需要一个给dingding群推送消息
-第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
-<meta property="og:updated_time" content="2017-03-08T07:02:35.000Z">
+逻辑是这样的:
+当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&amp;apos;mail&amp;apos;]
+然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中">
+<meta property="og:updated_time" content="2017-03-08T07:41:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-通知">
 <meta name="twitter:description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
 假设我们需要一个给dingding群推送消息
-第一步我们要生成这个通知php artisan make:notification SendNotice接下来我们需要去自定义这个通知了">
+逻辑是这样的:
+当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&amp;apos;mail&amp;apos;]
+然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中">
     
     
         
@@ -188,7 +194,11 @@
         <div class="main-content-wrap">
             <p>当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了</p>
 <p>假设我们需要一个给dingding群推送消息</p>
-<p>第一步我们要生成这个通知<br>php artisan make:notification SendNotice<br>接下来我们需要去自定义这个通知了</p>
+<p>逻辑是这样的:</p>
+<pre><code>当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&apos;mail&apos;]
+然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中传的参数而toMail()方法又要
+去实例化Message所以一个通知需要有三个文件Notification、Channel、Message
+</code></pre><p>第一步我们要生成这个通知<br>php artisan make:notification SendNotice<br>接下来我们需要去自定义这个通知了</p>
 <a id="more"></a>
 <p>1、在SendNotice要写via()和toDIngding()方法</p>
 <pre><code>public function via($notifiable)

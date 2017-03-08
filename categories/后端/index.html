@@ -182,7 +182,11 @@
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了</p>
 <p>假设我们需要一个给dingding群推送消息</p>
-<p>第一步我们要生成这个通知<br>php artisan make:notification SendNotice<br>接下来我们需要去自定义这个通知了</p>
+<p>逻辑是这样的:</p>
+<pre><code>当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&apos;mail&apos;]
+然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中传的参数而toMail()方法又要
+去实例化Message所以一个通知需要有三个文件Notification、Channel、Message
+</code></pre><p>第一步我们要生成这个通知<br>php artisan make:notification SendNotice<br>接下来我们需要去自定义这个通知了</p>
                     
                         <a href="/2017/03/08/laravel通知/" class="postShorten-excerpt_link link">
                             阅读全文
