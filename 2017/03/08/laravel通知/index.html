@@ -27,7 +27,7 @@
 逻辑是这样的:
 当实例化通知类的时候会先走Notification的via()方法在里面return要使用的发送频道 例如:return[&amp;apos;mail&amp;apos;]
 然后会去channel文件中执行send方法，在send方法里面需要得到toMail()方法中">
-<meta property="og:updated_time" content="2017-03-08T07:43:41.000Z">
+<meta property="og:updated_time" content="2017-03-09T09:00:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-通知">
 <meta name="twitter:description" content="当laravel自带的通知满足不了我们需求的时候的时候 我们就需要去自定义一个通知了
@@ -218,7 +218,7 @@ public function toDingding($notifiable)
     public function send($notifiable, Notification $notification)
     {
         $client = new Client();
-        $message = $notification-&gt;toDingding();
+        $message = $notification-&gt;toDingding(notifiable);
         $to = $notifiable-&gt;routeNotificationFor(&apos;dingding&apos;);
         $ret = $client-&gt;request(&apos;POST&apos;, $to, [
             &apos;verify&apos; =&gt; false,
