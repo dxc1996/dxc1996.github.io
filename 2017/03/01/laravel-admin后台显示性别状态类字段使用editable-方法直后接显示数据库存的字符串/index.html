@@ -14,24 +14,21 @@
     
     
     <meta name="description" content="$grid-&amp;gt;gender(&amp;apos;性别&amp;apos;)-&amp;gt;display(function($gender){
-                $data=[
-                    &amp;apos;&amp;apos;=&amp;gt;&amp;apos;未知&amp;apos;,
-                    &amp;apos;m&amp;apos;=&amp;gt;&amp;apos;男&amp;apos;,">
+           return $gender;
+       })-&amp;gt;editable(&amp;apos;select&amp;apos;, [&amp;apos;&amp;apos; =&amp;gt; &amp;apos;未知&amp;apos;, &amp;apos;m&amp;apos; =&amp;gt; &amp;apos;男&amp;ap">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串">
 <meta property="og:url" content="http://yoursite.com/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta property="og:description" content="$grid-&amp;gt;gender(&amp;apos;性别&amp;apos;)-&amp;gt;display(function($gender){
-                $data=[
-                    &amp;apos;&amp;apos;=&amp;gt;&amp;apos;未知&amp;apos;,
-                    &amp;apos;m&amp;apos;=&amp;gt;&amp;apos;男&amp;apos;,">
-<meta property="og:updated_time" content="2017-03-01T09:36:48.000Z">
+           return $gender;
+       })-&amp;gt;editable(&amp;apos;select&amp;apos;, [&amp;apos;&amp;apos; =&amp;gt; &amp;apos;未知&amp;apos;, &amp;apos;m&amp;apos; =&amp;gt; &amp;apos;男&amp;ap">
+<meta property="og:updated_time" content="2017-03-15T06:26:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串">
 <meta name="twitter:description" content="$grid-&amp;gt;gender(&amp;apos;性别&amp;apos;)-&amp;gt;display(function($gender){
-                $data=[
-                    &amp;apos;&amp;apos;=&amp;gt;&amp;apos;未知&amp;apos;,
-                    &amp;apos;m&amp;apos;=&amp;gt;&amp;apos;男&amp;apos;,">
+           return $gender;
+       })-&amp;gt;editable(&amp;apos;select&amp;apos;, [&amp;apos;&amp;apos; =&amp;gt; &amp;apos;未知&amp;apos;, &amp;apos;m&amp;apos; =&amp;gt; &amp;apos;男&amp;ap">
     
     
         
@@ -189,15 +186,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <pre><code> $grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
-                $data=[
-                    &apos;&apos;=&gt;&apos;未知&apos;,
-                    &apos;m&apos;=&gt;&apos;男&apos;,
-                    &apos;f&apos;=&gt;&apos;女&apos;,
-                ];
-                dd($data[$gender]);
-                return $data[$gender];
-})-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;f&apos; =&gt; &apos;女&apos;, &apos;m&apos; =&gt; &apos;男&apos;,]) ;
+            <pre><code>$grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
+           return $gender;
+       })-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;m&apos; =&gt; &apos;男&apos;, &apos;f&apos; =&gt; &apos;女&apos;]);
 </code></pre>
             
         </div>

@@ -275,15 +275,9 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code> $grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
-                $data=[
-                    &apos;&apos;=&gt;&apos;未知&apos;,
-                    &apos;m&apos;=&gt;&apos;男&apos;,
-                    &apos;f&apos;=&gt;&apos;女&apos;,
-                ];
-                dd($data[$gender]);
-                return $data[$gender];
-})-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;f&apos; =&gt; &apos;女&apos;, &apos;m&apos; =&gt; &apos;男&apos;,]) ;
+                    <pre><code>$grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
+           return $gender;
+       })-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;m&apos; =&gt; &apos;男&apos;, &apos;f&apos; =&gt; &apos;女&apos;]);
 </code></pre>
                     
                         
