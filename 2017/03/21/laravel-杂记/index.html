@@ -6,35 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>laravel-migrate  ide不提醒 - 一路还要走多久。</title>
+    <title>laravel杂记 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="修改app/config/ide-helper.php 
-/*
-|--------------------------------------------------------------------------
-| Fluent helpers
-|--------------------------------------------------------------------------">
+    <meta name="description" content="取post的作者 作者等级 还有作者的三条其他post        $post = Post::with([&amp;#39;user.level&amp;#39;,&amp;#39;user.posts&amp;#39;=&amp;gt;function($query){
+            $query-&amp;gt;orderBy(&amp;#39;created_at&amp;#39;, &amp;#39;desc&amp;#39;)-&amp;gt;limit(3)">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="laravel-migrate  ide不提醒">
-<meta property="og:url" content="http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/index.html">
+<meta property="og:title" content="laravel杂记">
+<meta property="og:url" content="http://yoursite.com/2017/03/21/laravel-杂记/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="修改app/config/ide-helper.php 
-/*
-|--------------------------------------------------------------------------
-| Fluent helpers
-|--------------------------------------------------------------------------">
-<meta property="og:updated_time" content="2017-02-27T08:50:00.000Z">
+<meta property="og:description" content="取post的作者 作者等级 还有作者的三条其他post        $post = Post::with([&amp;#39;user.level&amp;#39;,&amp;#39;user.posts&amp;#39;=&amp;gt;function($query){
+            $query-&amp;gt;orderBy(&amp;#39;created_at&amp;#39;, &amp;#39;desc&amp;#39;)-&amp;gt;limit(3)">
+<meta property="og:updated_time" content="2017-04-01T07:02:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel-migrate  ide不提醒">
-<meta name="twitter:description" content="修改app/config/ide-helper.php 
-/*
-|--------------------------------------------------------------------------
-| Fluent helpers
-|--------------------------------------------------------------------------">
+<meta name="twitter:title" content="laravel杂记">
+<meta name="twitter:description" content="取post的作者 作者等级 还有作者的三条其他post        $post = Post::with([&amp;#39;user.level&amp;#39;,&amp;#39;user.posts&amp;#39;=&amp;gt;function($query){
+            $query-&amp;gt;orderBy(&amp;#39;created_at&amp;#39;, &amp;#39;desc&amp;#39;)-&amp;gt;limit(3)">
     
     
         
@@ -170,13 +161,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            laravel-migrate  ide不提醒
+            laravel杂记
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-27T16:48:43+08:00">
+    <time itemprop="datePublished" datetime="2017-03-21T10:52:29+08:00">
 	
-		    2月 27, 2017
+		    3月 21, 2017
     	
     </time>
     
@@ -192,30 +183,25 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>修改app/config/ide-helper.php </p>
-<pre><code>/*
-|--------------------------------------------------------------------------
-| Fluent helpers
-|--------------------------------------------------------------------------
-|
-| Set to true to generate commonly used Fluent methods
-|
-*/
+            <p>取post的作者 作者等级 还有作者的三条其他post<br>        <code>$post = Post::with([&#39;user.level&#39;,&#39;user.posts&#39;=&gt;function($query){
+            $query-&gt;orderBy(&#39;created_at&#39;, &#39;desc&#39;)-&gt;limit(3);
+        }])-&gt;firstOrFail($id);</code><br><a id="more"></a><br>错误写法<br>        <code>$post = Post::find($id)-&gt;with([&#39;user.level&#39;,&#39;user.posts&#39;=&gt;function($query){
+            $query-&gt;orderBy(&#39;created_at&#39;, &#39;desc&#39;)-&gt;limit(3);
+        }])-&gt;get();</code><br>        这样会在find的时候变成一个对象  对象调用with方法相当于new了一个类去调用关联 所以会查出全部的来</p>
+<p>查看那个sql更耗时</p>
+<pre><code>`在AppServiceProvider文件中的boot()方法写 \DB::enableQueryLog();
+然后在执行sql的地方，在sql执行完后dd(\DB::getQueryLog());`
+</code></pre><p>更新中间表记录是不自动填充时间  在model里<br>        <code>public function properties(): MorphToMany
+        {
+                return $this-&gt;morphToMany(Property::class, &#39;propertyable&#39;)-&gt;withTimestamps();
+        }</code><br>中间表排序<br>        public function favorites()<br>        {<br>        return $this-&gt;belongsToMany(Article::class, ‘favorites’)<br>                                -&gt;orderBy(‘favorites.created_at’, ‘desc’)<br>                                -&gt;withTimestamps();<br>        }</p>
+<p>业务逻辑：当用户修改文章标题时，更新动态里对应文章缓存了的标题。<br>&lt;?php</p>
+<p>namespace App\Observers;</p>
+<p>use App\Models\Item;</p>
+<p>class ItemObserver<br>{<br>    public function updated(Item $item)<br>    {<br>        if ($item-&gt;isDirty(‘title’)) {<br>            // ….. 这里是标题被修改了的逻辑<br>        }<br>    }<br>}<br>isDirty() 不传参数的话，会判断本次提交是否对数据模型造成更改。此方法在 ItemObserver 的以下方法内都可用：</p>
+<p>// creating, created, updating, updated, saving,<br>// saved,  deleting, deleted, restoring, restored<br>另外一个有用的方法是 getDirty()，会返回所有修改过的字段。</p>
+<p>$changed = $this-&gt;isDirty() ? $this-&gt;getDirty() : false;<br>// Do stuff here<br>if($changed)<br>{<br>    foreach($changed as $attr)<br>    {<br>        // 我的业务逻辑<br>    }<br>}</p>
 
-&apos;include_fluent&apos; =&gt; true,
-
-/*
-|--------------------------------------------------------------------------
-| Helper files to include
-|--------------------------------------------------------------------------
-|
-| Include helper files. By default not included, but can be toggled with the
-| -- helpers (-H) option. Extra helper files can be included.
-|
-*/
-
-&apos;include_helpers&apos; =&gt; true,
-</code></pre>
             
         </div>
     </div>
@@ -233,7 +219,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/"  data-tooltip="laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -241,7 +227,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/27/laravel手机号验证规则/" data-tooltip="laravel手机号验证规则">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/08/laravel通知/" data-tooltip="laravel-通知">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -256,17 +242,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -308,7 +294,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/"  data-tooltip="laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -316,7 +302,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/27/laravel手机号验证规则/" data-tooltip="laravel手机号验证规则">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/08/laravel通知/" data-tooltip="laravel-通知">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -331,17 +317,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -361,17 +347,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/27/laravel-migrate-ide不提醒/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/03/21/laravel-杂记/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

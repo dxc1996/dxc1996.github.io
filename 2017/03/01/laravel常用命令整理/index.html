@@ -13,7 +13,7 @@
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="启动php自带的web serverphp -S localhost:8080 
+    <meta name="description" content="启动php自带的web serverphp -S localhost:8080
 创建表单请求验证php artisan make:request StoreBlogPost
 创建中间键php artisan make:middleware CheckAge
 创建控制器php artisan make:controller PhotoController –resource">
@@ -21,14 +21,14 @@
 <meta property="og:title" content="laravel常用命令整理">
 <meta property="og:url" content="http://yoursite.com/2017/03/01/laravel常用命令整理/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="启动php自带的web serverphp -S localhost:8080 
+<meta property="og:description" content="启动php自带的web serverphp -S localhost:8080
 创建表单请求验证php artisan make:request StoreBlogPost
 创建中间键php artisan make:middleware CheckAge
 创建控制器php artisan make:controller PhotoController –resource">
-<meta property="og:updated_time" content="2017-03-14T07:06:48.000Z">
+<meta property="og:updated_time" content="2017-03-22T05:03:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel常用命令整理">
-<meta name="twitter:description" content="启动php自带的web serverphp -S localhost:8080 
+<meta name="twitter:description" content="启动php自带的web serverphp -S localhost:8080
 创建表单请求验证php artisan make:request StoreBlogPost
 创建中间键php artisan make:middleware CheckAge
 创建控制器php artisan make:controller PhotoController –resource">
@@ -189,7 +189,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>启动php自带的web server<br>php -S localhost:8080 </p>
+            <p>启动php自带的web server<br>php -S localhost:8080</p>
 <p>创建表单请求验证<br>php artisan make:request StoreBlogPost</p>
 <p>创建中间键<br>php artisan make:middleware CheckAge</p>
 <p>创建控制器<br>php artisan make:controller PhotoController –resource</p>
@@ -209,12 +209,17 @@
 <p>刷新表结构并重新填充数据<br>php artisan migrate:refresh –seed</p>
 <p>创建数据填充<br>php artisan make:seeder UsersTableSeeder</p>
 <p>执行全部填充<br>php artisan db:seed</p>
+<p>创建测试应用<br>php artisan make:test UserTest</p>
 <p>执行指定填充<br>php artisan db:seed –class=UserTableSeeder</p>
 <p>生成事件和监听器(自动生成在 EventServiceProvider 中列出的所有事件和监听器)<br>php artisan event:generate</p>
 <p>laravel-admin生成控制器<br>php artisan admin:make UserController –model=App\Models\User</p>
 <p>laravel-test-factory生成工厂模式填充数据<br>php artisan test-factory-helper:generate</p>
 <p>生成命令(创建一个命令类并存放在 app/Console/Commands 目录)<br>php artisan make:command SendEmails</p>
 <p>更新 autoload_classmap 的内容<br>composer dump-autoload</p>
+<p>laragen插件<br>php artisan laragen:model User<br>php artisan laragen:model –all</p>
+<p>php artisan laragen:api User<br>php artisan laragen:api User –model –actions=index,view</p>
+<p>php artisan laragen:channel Sms<br>php artisan laragen:channel Sms –message=mobile,content</p>
+<p>php artisan laragen:message Sms<br>php artisan laragen:message Sms –attributes=mobie,content</p>
 
             
         </div>
@@ -541,7 +546,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 39 篇文章
+                找到 40 篇文章
             </p>
         </div>
     </div>

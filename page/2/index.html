@@ -156,6 +156,69 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/03/01/laravel-sms-luosimao服务短信发送失败/">
+                            laravel-sms luosimao短息发送失败
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T15:01:13+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://ojjot6x9l.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170301150346.png" alt=""><br>再用laravel-sms短信扩展的时候发现lusoimao怎么发送短信返回值为</p>
+<pre><code>[
+    {
+        &quot;driver&quot;: &quot;Luosimao&quot;,
+        &quot;time&quot;: {
+            &quot;started_at&quot;: &quot;0.12135700 1488351377&quot;,
+            &quot;finished_at&quot;: &quot;0.15184700 1488351377&quot;
+        },
+        &quot;success&quot;: false,
+        &quot;result&quot;: {
+            &quot;info&quot;: false,
+            &quot;code&quot;: 0
+        }
+    }
+]
+</code></pre><p>最后发现是因为laravel-sms包里面<code>vendor/toplan/phpsms/src/phpsms/agents/LuosimaoAgent.php</code>里面的url地址用的https的格式 而官方给的文档则是http<br><img src="http://ojjot6x9l.bkt.clouddn.com/23131312135.png" alt=""></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel-sms-luosimao服务短信发送失败/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/03/01/laravel事件报错must-be-an-instance-of-Illuminate-Foundation-Auth-User/">
                             laravel事件报错must be an instance of Illuminate/Foundation/Auth/User
                         </a>
@@ -228,7 +291,7 @@
             </div>
             
                 <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>启动php自带的web server<br>php -S localhost:8080 </p>
+                    <p>启动php自带的web server<br>php -S localhost:8080</p>
 <p>创建表单请求验证<br>php artisan make:request StoreBlogPost</p>
 <p>创建中间键<br>php artisan make:middleware CheckAge</p>
 <p>创建控制器<br>php artisan make:controller PhotoController –resource</p>
@@ -347,57 +410,6 @@
                     
                         <p>
                             <a href="/2017/03/01/laravel-admin数据模型树报错/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/">
-                            laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-28T13:39:52+08:00">
-	
-		    2月 28, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>$grid-&gt;username(&apos;用户名&apos;)-&gt;editable();
-</code></pre><p> <strong>修改后 提示修改成功  但是修改后页面刷新 无变化</strong></p>
-<p> <strong>原因：没有在form()方法里面写这个字段</strong></p>
-<pre><code>$form-&gt;text(&apos;username&apos;,&apos;用户名&apos;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/28/laravel-admin修改内容传值过去提示修改成功但是刷新后没有修改/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -608,7 +620,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 39 篇文章
+                找到 40 篇文章
             </p>
         </div>
     </div>

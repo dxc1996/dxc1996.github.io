@@ -157,6 +157,56 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/">
+                            laravel-admin后台显示性别状态类字段使用editable()方法直后接显示数据库存的字符串
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-03-01T09:49:29+08:00">
+	
+		    3月 01, 2017
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/后端/">后端</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <pre><code>$grid-&gt;gender(&apos;性别&apos;)-&gt;display(function($gender){
+           return $gender;
+       })-&gt;editable(&apos;select&apos;, [&apos;&apos; =&gt; &apos;未知&apos;, &apos;m&apos; =&gt; &apos;男&apos;, &apos;f&apos; =&gt; &apos;女&apos;]);
+</code></pre>
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/03/01/laravel-admin后台显示性别状态类字段使用editable-方法直后接显示数据库存的字符串/#post-footer" class="postShorten-excerpt_link link">
+                                注释和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/03/01/laravel-admin数据模型树报错/">
                             laravel-admin数据模型树报错
                         </a>
@@ -412,89 +462,6 @@ class AppServiceProvider extends ServiceProvider
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/24/laravel门卫/">
-                            laravel门卫
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-24T13:07:11+08:00">
-	
-		    2月 24, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>配置cofig/auth.php</p>
-<pre><code>&apos;guards&apos; =&gt; [
-        &apos;web&apos; =&gt; [
-            &apos;driver&apos; =&gt; &apos;session&apos;,
-            &apos;provider&apos; =&gt; &apos;users&apos;,
-        ],
-
-        &apos;api&apos; =&gt; [
-            &apos;driver&apos; =&gt; &apos;token&apos;,
-            &apos;provider&apos; =&gt; &apos;users&apos;,
-        ],
-    ],
-
-    &apos;providers&apos; =&gt; [
-        &apos;users&apos; =&gt; [
-            &apos;driver&apos; =&gt; &apos;eloquent&apos;,
-            &apos;model&apos; =&gt; App\User::class,
-        ],
-
-        // &apos;users&apos; =&gt; [
-        //     &apos;driver&apos; =&gt; &apos;database&apos;,
-        //     &apos;table&apos; =&gt; &apos;users&apos;,
-        // ],
-    ],
-</code></pre><p>当有一个新模块的admin 现在guards数组加一个数组</p>
-<pre><code>&apos;admin&apos; =&gt; [
-            &apos;driver&apos; =&gt; &apos;session&apos;,
-            &apos;provider&apos; =&gt; &apos;admin&apos;,
- ],
-</code></pre><p> 在providers数组加</p>
-<pre><code>&apos;admin_users&apos; =&gt; [
-            &apos;driver&apos; =&gt; &apos;eloquent&apos;,
-            &apos;model&apos; =&gt; App\Admin\Model\User::class,
-        ],
-</code></pre><p> 然后再app\http\controller\auth\logincontroller中重写guard()<br> 方法</p>
-<p> 找详细的方法要在use的traits中找。</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/24/laravel门卫/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -695,7 +662,7 @@ class AppServiceProvider extends ServiceProvider
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 39 篇文章
+                找到 40 篇文章
             </p>
         </div>
     </div>
