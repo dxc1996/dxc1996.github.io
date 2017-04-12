@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="一路还要走多久。">
 <meta property="og:description" content="取post的作者 作者等级 还有作者的三条其他post        $post = Post::with([&amp;#39;user.level&amp;#39;,&amp;#39;user.posts&amp;#39;=&amp;gt;function($query){
             $query-&amp;gt;orderBy(&amp;#39;created_at&amp;#39;, &amp;#39;desc&amp;#39;)-&amp;gt;limit(3)">
-<meta property="og:updated_time" content="2017-04-01T07:02:37.000Z">
+<meta property="og:updated_time" content="2017-04-12T08:26:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel杂记">
 <meta name="twitter:description" content="取post的作者 作者等级 还有作者的三条其他post        $post = Post::with([&amp;#39;user.level&amp;#39;,&amp;#39;user.posts&amp;#39;=&amp;gt;function($query){
@@ -201,7 +201,9 @@
 <p>class ItemObserver<br>{<br>    public function updated(Item $item)<br>    {<br>        if ($item-&gt;isDirty(‘title’)) {<br>            // ….. 这里是标题被修改了的逻辑<br>        }<br>    }<br>}<br>isDirty() 不传参数的话，会判断本次提交是否对数据模型造成更改。此方法在 ItemObserver 的以下方法内都可用：</p>
 <p>// creating, created, updating, updated, saving,<br>// saved,  deleting, deleted, restoring, restored<br>另外一个有用的方法是 getDirty()，会返回所有修改过的字段。</p>
 <p>$changed = $this-&gt;isDirty() ? $this-&gt;getDirty() : false;<br>// Do stuff here<br>if($changed)<br>{<br>    foreach($changed as $attr)<br>    {<br>        // 我的业务逻辑<br>    }<br>}</p>
-
+<p>//分类筛选<br>if ($category = $request-&gt;input(‘category’)) {<br>             $query-&gt;whereHas(‘news’, function ($query) use ($category) {<br>                $query-&gt;whereHas(‘categories’, function ($query) use ($category) {<br>                    $query-&gt;where(‘parent_id’, $category);<br>                });<br>            });</p>
+<pre><code>}
+</code></pre>
             
         </div>
     </div>
