@@ -6,29 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>laravel-jwt-auth使用 - 一路还要走多久。</title>
+    <title>Carbon 使用 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/dog.jpg">
     
     
-    <meta name="description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
+    <meta name="description" content="获取当前时间
+可以同 now() 方法获取当前的日期和时间。如果你不指定参数，它会使用 PHP 配置中的时区
+echo Carbon::now();//2017-04-05 18:57:00
+也可以进行传递时区
+echo Carbon::now(‘Europe\London’);
+//除 now() 外，还提供了 today()、tomorrow()、yesterday() 等静态函数，不过，它们">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="laravel-jwt-auth使用">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/laravel-jwt-auth使用/index.html">
+<meta property="og:title" content="Carbon 使用">
+<meta property="og:url" content="http://yoursite.com/2017/05/04/Carbon-使用/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
-<meta property="og:description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
-<meta property="og:updated_time" content="2017-02-22T09:56:35.100Z">
+<meta property="og:description" content="获取当前时间
+可以同 now() 方法获取当前的日期和时间。如果你不指定参数，它会使用 PHP 配置中的时区
+echo Carbon::now();//2017-04-05 18:57:00
+也可以进行传递时区
+echo Carbon::now(‘Europe\London’);
+//除 now() 外，还提供了 today()、tomorrow()、yesterday() 等静态函数，不过，它们">
+<meta property="og:updated_time" content="2017-05-04T09:54:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel-jwt-auth使用">
-<meta name="twitter:description" content="1、安装：https://github.com/tymondesigns/jwt-auth/wiki/Installation2、生成token    
-public function login(Request $request){
-            $credentials = $request-&amp;gt;only(&amp;apos;mobile&amp;apos;, &amp;apos;password&amp;ap">
+<meta name="twitter:title" content="Carbon 使用">
+<meta name="twitter:description" content="获取当前时间
+可以同 now() 方法获取当前的日期和时间。如果你不指定参数，它会使用 PHP 配置中的时区
+echo Carbon::now();//2017-04-05 18:57:00
+也可以进行传递时区
+echo Carbon::now(‘Europe\London’);
+//除 now() 外，还提供了 today()、tomorrow()、yesterday() 等静态函数，不过，它们">
     
     
         
@@ -164,13 +173,13 @@ public function login(Request $request){
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            laravel-jwt-auth使用
+            Carbon 使用
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T17:50:47+08:00">
+    <time itemprop="datePublished" datetime="2017-05-04T17:42:03+08:00">
 	
-		    2月 22, 2017
+		    5月 04, 2017
     	
     </time>
     
@@ -186,38 +195,80 @@ public function login(Request $request){
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>1、安装：<a href="https://github.com/tymondesigns/jwt-auth/wiki/Installation" target="_blank" rel="external">https://github.com/tymondesigns/jwt-auth/wiki/Installation</a><br>2、生成token    </p>
-<pre><code>public function login(Request $request){
-            $credentials = $request-&gt;only(&apos;mobile&apos;, &apos;password&apos;);
-            try {
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return \Response::json([&apos;error&apos; =&gt; &apos;账号或密码不正确&apos;], 401);
-                }
-                return [&quot;user&quot;=&gt;JWTAuth::toUser($token),&quot;token&quot;=&gt;$token];
-            } catch (JWTException $e) {
-                return \Response::json([&apos;error&apos; =&gt; &apos;could_not_create_token&apos;], 500);
-            }
-
+            <p>获取当前时间</p>
+<p>可以同 now() 方法获取当前的日期和时间。如果你不指定参数，它会使用 PHP 配置中的时区</p>
+<p>echo Carbon::now();<br>//2017-04-05 18:57:00</p>
+<p>也可以进行传递时区</p>
+<p>echo Carbon::now(‘Europe\London’);</p>
+<p>//除 now() 外，还提供了 today()、tomorrow()、yesterday() 等静态函数，不过，它们的时间都是 00:00:00 ：</p>
+<p>echo Carbon::today(); // 2017-04-05 00:00:00<br>echo Carbon::tomorrow();<br>….<br>以上会输出 Carbon 类型对象</p>
+<pre><code>enter code here
+Carbon {#179 ▼
+  +&quot;date&quot;: &quot;2017-04-05 00:00:00.000000&quot;
+  +&quot;timezone_type&quot;: 3
+  +&quot;timezone&quot;: &quot;UTC&quot;
 }
-</code></pre><p>3、根据token获取用户信息</p>
-<pre><code>public function store(CreateUserRequest $request)
-{
+</code></pre><p>要想获取字符串类型的日期，可以使用下面的代码：</p>
+<p>echo Carbon::today()-&gt;toDateTimeString();<br>echo Carbon::yesterday()-&gt;toDateTimeString();<br>echo Carbon::tomorrow()-&gt;toDateTimeString();</p>
+<p>日期类型转为字符串</p>
+<p>如上所述，默认情况下，Carbon 的方法返回的为一个日期时间对象。虽然它是一个对象，但是你却可以直接使用 echo 输出结果，因为有 __toString 魔术方法。但是如果你想把它转为字符串，可以使用 toDateString 或 toDateTimeString 方法：</p>
+<p>echo Carbon::now()-&gt;toDateString(); //2016-10-14<br>echo Carbon::now()-&gt;toDateTimeString(); //2016-10-14 20:22:50</p>
+<p>日期解析</p>
+<p>你还可以使用 parse 方法解析任何顺序和类型的日期（结果为 Carbon 类型的日期时间对象）：</p>
+<p>echo Carbon::parse(‘2016-10-15’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘2016-10-15’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘2016-10-15 00:10:25’)-&gt;toDateTimeString(); //2016-10-15 00:10:25</p>
+<p>echo Carbon::parse(‘today’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘yesterday’)-&gt;toDateTimeString(); //2016-10-14 00:00:00</p>
+<p>echo Carbon::parse(‘tomorrow’)-&gt;toDateTimeString(); //2016-10-16 00:00:00</p>
+<p>echo Carbon::parse(‘2 days ago’)-&gt;toDateTimeString(); //2016-10-13 20:49:53</p>
+<p>echo Carbon::parse(‘+3 days’)-&gt;toDateTimeString(); //2016-10-18 20:49:53</p>
+<p>echo Carbon::parse(‘+2 weeks’)-&gt;toDateTimeString(); //2016-10-29 20:49:53</p>
+<p>echo Carbon::parse(‘+4 months’)-&gt;toDateTimeString(); //2017-02-15 20:49:53</p>
+<p>echo Carbon::parse(‘-1 year’)-&gt;toDateTimeString(); //2015-10-15 20:49:53</p>
+<p>echo Carbon::parse(‘next wednesday’)-&gt;toDateTimeString(); //2016-10-19 00:00:00</p>
+<p>echo Carbon::parse(‘last friday’)-&gt;toDateTimeString(); //2016-10-14 00:00:00</p>
+<p>构造日期</p>
+<p>你还可以使用单独的年月日来构造日期：</p>
+<p>$year = ‘2015’;<br>$month = ‘04’;<br>$day = ‘12’;</p>
+<p>echo Carbon::createFromDate($year, $month, $day); //2015-04-12 20:55:59</p>
+<p>$hour = ‘02’;<br>$minute = ‘15’:<br>$second = ‘30’;</p>
+<p>echo Carbon::create($year, $month, $day, $hour, $minute, $second); //2015-04-12 02:15:30</p>
+<p>echo Carbon::createFromDate(null, 12, 25);  // 年默认为当前年份</p>
+<p>日期操作</p>
+<p>日期操作可以通过 add （增加）或 sub （减去）跟上要增加或减去的单位来完成。例如，你想给一个日期增加指定的天数，你可以使用 addDays 方法。此外还提供了一个 modify 方法，参数格式为 + 或 - 跟上值及单位。所以，如果你想给当前日期增加一年，你可以传递 +1 year：</p>
+<p>echo Carbon::now()-&gt;addDays(25); //2016-11-09 14:00:01</p>
+<p>echo Carbon::now()-&gt;addWeeks(3); //2016-11-05 14:00:01</p>
+<p>echo Carbon::now()-&gt;addHours(25); //2016-10-16 15:00:01</p>
+<p>echo Carbon::now()-&gt;subHours(2); //2016-10-15 12:00:01</p>
+<p>echo Carbon::now()-&gt;addHours(2)-&gt;addMinutes(12); //2016-10-15 16:12:01</p>
+<p>echo Carbon::now()-&gt;modify(‘+15 days’); //2016-10-30 14:00:01</p>
+<p>echo Carbon::now()-&gt;modify(‘-2 days’); //2016-10-13 14:00:01</p>
+<p>日期比较</p>
+<p>在 Carbon 中你可以使用下面的方法来比较日期：</p>
+<p>min –返回最小日期。<br>max – 返回最大日期。<br>eq – 判断两个日期是否相等。<br>gt – 判断第一个日期是否比第二个日期大。<br>lt – 判断第一个日期是否比第二个日期小。<br>gte – 判断第一个日期是否大于等于第二个日期。<br>lte – 判断第一个日期是否小于等于第二个日期。</p>
+<p>echo Carbon::now()-&gt;tzName;                        // America/Toronto</p>
+<p>$first = Carbon::create(2012, 9, 5, 23, 26, 11);</p>
+<p>$second = Carbon::create(2012, 9, 5, 20, 26, 11, ‘America/Vancouver’);</p>
+<p>echo $first-&gt;toDateTimeString();                   // 2012-09-05 23:26:11</p>
+<p>echo $first-&gt;tzName;                               // America/Toronto</p>
+<p>echo $second-&gt;toDateTimeString();                  // 2012-09-05 20:26:11</p>
+<p>echo $second-&gt;tzName;                              // America/Vancouver</p>
+<p>var_dump($first-&gt;eq($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;ne($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gte($second));                    // bool(true)</p>
+<p>var_dump($first-&gt;lt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;lte($second));                    // bool(true)</p>
+<p>$first-&gt;setDateTime(2012, 1, 1, 0, 0, 0);</p>
+<p>$second-&gt;setDateTime(2012, 1, 1, 0, 0, 0);         // Remember tz is ‘America/Vancouver’</p>
+<p>var_dump($first-&gt;eq($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;ne($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;gt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gte($second));                    // bool(false)</p>
+<p>var_dump($first-&gt;lt($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;lte($second));                    // bool(true)</p>
 
-       $user = new User();
-       $user-&gt;mobile = $request-&gt;input(&apos;mobile&apos;);
-       $user-&gt;password = $request-&gt;input(&apos;password&apos;);
-
-       try{
-           if($user-&gt;save()){
-               return [&apos;mobile&apos;=&gt;$user-&gt;mobile,&apos;token&apos;=&gt;JWTAuth::fromUser($user)];
-           }else{
-               return \Response::json([&apos;register error&apos;],500);
-           }
-       }catch(DBALException $e){
-           return $e-&gt;getMessage();
-       }
-}
-</code></pre>
             
         </div>
     </div>
@@ -235,7 +286,7 @@ public function login(Request $request){
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/laravel数据库外键/"  data-tooltip="laravel数据库外键">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -243,7 +294,7 @@ public function login(Request $request){
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel跨域/" data-tooltip="laravel跨域">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/25/njk的文件打开方式/" data-tooltip="*.njk的文件打开方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -258,17 +309,17 @@ public function login(Request $request){
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -310,7 +361,7 @@ public function login(Request $request){
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/24/laravel数据库外键/"  data-tooltip="laravel数据库外键">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -318,7 +369,7 @@ public function login(Request $request){
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/22/laravel跨域/" data-tooltip="laravel跨域">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/25/njk的文件打开方式/" data-tooltip="*.njk的文件打开方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -333,17 +384,17 @@ public function login(Request $request){
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -363,17 +414,17 @@ public function login(Request $request){
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/02/22/laravel-jwt-auth使用/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/04/Carbon-使用/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

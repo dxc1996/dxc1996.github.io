@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="一路还要走多久。">
-    <title>归档: 2017 - 一路还要走多久。</title>
+    <title>归档: 2017/5 - 一路还要走多久。</title>
     <meta name="author" content="dai">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="一路还要走多久。">
-<meta property="og:url" content="http://yoursite.com/archives/2017/page/6/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
 <meta property="og:site_name" content="一路还要走多久。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一路还要走多久。">
@@ -151,21 +151,21 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/02/22/laravel事件/">
-                            laravel事件
+                        <a class="link-unstyled" href="/2017/05/04/Carbon-使用/">
+                            Carbon 使用
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T15:00:59+08:00">
+    <time itemprop="datePublished" datetime="2017-05-04T17:42:03+08:00">
 	
-		    2月 22, 2017
+		    5月 04, 2017
     	
     </time>
     
@@ -179,258 +179,87 @@
 
             </div>
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>1、创建事件<code>php artisan event:generate</code><br>2、然后在事件中 接收参数</p>
-<pre><code>class OrderPaid
-{
-    use InteractsWithSockets, SerializesModels;
-
-
-    public $order;
-    /**
-     * Create a new event instance.
-     *
-     * @return void
-     */
-    public function __construct(Order $order)
-    {
-        $this-&gt;order = $order;
-    }
-
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return Channel|array
-     */
-    public function broadcastOn()
-    {
-        return new PrivateChannel(&apos;channel-name&apos;);
-    }
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>获取当前时间</p>
+<p>可以同 now() 方法获取当前的日期和时间。如果你不指定参数，它会使用 PHP 配置中的时区</p>
+<p>echo Carbon::now();<br>//2017-04-05 18:57:00</p>
+<p>也可以进行传递时区</p>
+<p>echo Carbon::now(‘Europe\London’);</p>
+<p>//除 now() 外，还提供了 today()、tomorrow()、yesterday() 等静态函数，不过，它们的时间都是 00:00:00 ：</p>
+<p>echo Carbon::today(); // 2017-04-05 00:00:00<br>echo Carbon::tomorrow();<br>….<br>以上会输出 Carbon 类型对象</p>
+<pre><code>enter code here
+Carbon {#179 ▼
+  +&quot;date&quot;: &quot;2017-04-05 00:00:00.000000&quot;
+  +&quot;timezone_type&quot;: 3
+  +&quot;timezone&quot;: &quot;UTC&quot;
 }
-</code></pre>
-                    
-                        <a href="/2017/02/22/laravel事件/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/22/ajax设置好了跨域却无法跨域问题/">
-                            ajax设置好了跨域却无法跨域问题
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-22T14:15:46+08:00">
-	
-		    2月 22, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>ajax请求获取数据时服务端设置好了允许跨域，但是请求后报错<code>No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access.</code><br>查请求头<strong>General</strong>会发现status code为<strong>302</strong>(页面跳转)会发现是因为ajax跳转报错之后返回上一页上一个页面不允许跨域所以会报这个错</p>
-<p>解决方法：请求后面加上json参数 例如:</p>
-<pre><code>$.post(&apos;http://127.0.0.1:8000/api/register&apos;,function(data){
-
-},&apos;json&apos;);
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/22/ajax设置好了跨域却无法跨域问题/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/15/windows-redis启动命令/">
-                            windows redis启动命令
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-15T14:43:24+08:00">
-	
-		    2月 15, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/后端/">后端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <pre><code>在redis文件目录下执行redis-server  redis.windows.conf
-</code></pre>
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/15/windows-redis启动命令/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue请求接口url参数配置/">
-                            vue请求接口url参数配置
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T17:02:30+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue请求接口url参数配置</strong></p>
-<ul>
-<li><p>new?id=1</p>
-<pre><code>`this.$http.get(&apos;api/news-detail.json&apos;, {
-      params: {
-          id: this.$route.params.id
-      }
-  }).then(({data}) =&gt; {
-      this.news = data
-  })`
-</code></pre></li>
-<li><p>new/1</p>
-<pre><code>`let id = this.$route.params.id;
-this.$http.get(&apos;http://127.0.0.1:8000/api/news/&apos;+id,{}).then(({data}) =&gt; {
-        this.news = data.data
-})`
-</code></pre></li>
-</ul>
+</code></pre><p>要想获取字符串类型的日期，可以使用下面的代码：</p>
+<p>echo Carbon::today()-&gt;toDateTimeString();<br>echo Carbon::yesterday()-&gt;toDateTimeString();<br>echo Carbon::tomorrow()-&gt;toDateTimeString();</p>
+<p>日期类型转为字符串</p>
+<p>如上所述，默认情况下，Carbon 的方法返回的为一个日期时间对象。虽然它是一个对象，但是你却可以直接使用 echo 输出结果，因为有 __toString 魔术方法。但是如果你想把它转为字符串，可以使用 toDateString 或 toDateTimeString 方法：</p>
+<p>echo Carbon::now()-&gt;toDateString(); //2016-10-14<br>echo Carbon::now()-&gt;toDateTimeString(); //2016-10-14 20:22:50</p>
+<p>日期解析</p>
+<p>你还可以使用 parse 方法解析任何顺序和类型的日期（结果为 Carbon 类型的日期时间对象）：</p>
+<p>echo Carbon::parse(‘2016-10-15’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘2016-10-15’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘2016-10-15 00:10:25’)-&gt;toDateTimeString(); //2016-10-15 00:10:25</p>
+<p>echo Carbon::parse(‘today’)-&gt;toDateTimeString(); //2016-10-15 00:00:00</p>
+<p>echo Carbon::parse(‘yesterday’)-&gt;toDateTimeString(); //2016-10-14 00:00:00</p>
+<p>echo Carbon::parse(‘tomorrow’)-&gt;toDateTimeString(); //2016-10-16 00:00:00</p>
+<p>echo Carbon::parse(‘2 days ago’)-&gt;toDateTimeString(); //2016-10-13 20:49:53</p>
+<p>echo Carbon::parse(‘+3 days’)-&gt;toDateTimeString(); //2016-10-18 20:49:53</p>
+<p>echo Carbon::parse(‘+2 weeks’)-&gt;toDateTimeString(); //2016-10-29 20:49:53</p>
+<p>echo Carbon::parse(‘+4 months’)-&gt;toDateTimeString(); //2017-02-15 20:49:53</p>
+<p>echo Carbon::parse(‘-1 year’)-&gt;toDateTimeString(); //2015-10-15 20:49:53</p>
+<p>echo Carbon::parse(‘next wednesday’)-&gt;toDateTimeString(); //2016-10-19 00:00:00</p>
+<p>echo Carbon::parse(‘last friday’)-&gt;toDateTimeString(); //2016-10-14 00:00:00</p>
+<p>构造日期</p>
+<p>你还可以使用单独的年月日来构造日期：</p>
+<p>$year = ‘2015’;<br>$month = ‘04’;<br>$day = ‘12’;</p>
+<p>echo Carbon::createFromDate($year, $month, $day); //2015-04-12 20:55:59</p>
+<p>$hour = ‘02’;<br>$minute = ‘15’:<br>$second = ‘30’;</p>
+<p>echo Carbon::create($year, $month, $day, $hour, $minute, $second); //2015-04-12 02:15:30</p>
+<p>echo Carbon::createFromDate(null, 12, 25);  // 年默认为当前年份</p>
+<p>日期操作</p>
+<p>日期操作可以通过 add （增加）或 sub （减去）跟上要增加或减去的单位来完成。例如，你想给一个日期增加指定的天数，你可以使用 addDays 方法。此外还提供了一个 modify 方法，参数格式为 + 或 - 跟上值及单位。所以，如果你想给当前日期增加一年，你可以传递 +1 year：</p>
+<p>echo Carbon::now()-&gt;addDays(25); //2016-11-09 14:00:01</p>
+<p>echo Carbon::now()-&gt;addWeeks(3); //2016-11-05 14:00:01</p>
+<p>echo Carbon::now()-&gt;addHours(25); //2016-10-16 15:00:01</p>
+<p>echo Carbon::now()-&gt;subHours(2); //2016-10-15 12:00:01</p>
+<p>echo Carbon::now()-&gt;addHours(2)-&gt;addMinutes(12); //2016-10-15 16:12:01</p>
+<p>echo Carbon::now()-&gt;modify(‘+15 days’); //2016-10-30 14:00:01</p>
+<p>echo Carbon::now()-&gt;modify(‘-2 days’); //2016-10-13 14:00:01</p>
+<p>日期比较</p>
+<p>在 Carbon 中你可以使用下面的方法来比较日期：</p>
+<p>min –返回最小日期。<br>max – 返回最大日期。<br>eq – 判断两个日期是否相等。<br>gt – 判断第一个日期是否比第二个日期大。<br>lt – 判断第一个日期是否比第二个日期小。<br>gte – 判断第一个日期是否大于等于第二个日期。<br>lte – 判断第一个日期是否小于等于第二个日期。</p>
+<p>echo Carbon::now()-&gt;tzName;                        // America/Toronto</p>
+<p>$first = Carbon::create(2012, 9, 5, 23, 26, 11);</p>
+<p>$second = Carbon::create(2012, 9, 5, 20, 26, 11, ‘America/Vancouver’);</p>
+<p>echo $first-&gt;toDateTimeString();                   // 2012-09-05 23:26:11</p>
+<p>echo $first-&gt;tzName;                               // America/Toronto</p>
+<p>echo $second-&gt;toDateTimeString();                  // 2012-09-05 20:26:11</p>
+<p>echo $second-&gt;tzName;                              // America/Vancouver</p>
+<p>var_dump($first-&gt;eq($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;ne($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gte($second));                    // bool(true)</p>
+<p>var_dump($first-&gt;lt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;lte($second));                    // bool(true)</p>
+<p>$first-&gt;setDateTime(2012, 1, 1, 0, 0, 0);</p>
+<p>$second-&gt;setDateTime(2012, 1, 1, 0, 0, 0);         // Remember tz is ‘America/Vancouver’</p>
+<p>var_dump($first-&gt;eq($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;ne($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;gt($second));                     // bool(false)</p>
+<p>var_dump($first-&gt;gte($second));                    // bool(false)</p>
+<p>var_dump($first-&gt;lt($second));                     // bool(true)</p>
+<p>var_dump($first-&gt;lte($second));                    // bool(true)</p>
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/02/14/vue请求接口url参数配置/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/14/vue-resource入门/">
-                            vue-resource入门
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-14T13:51:17+08:00">
-	
-		    2月 14, 2017
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/前端/">前端</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>vue-resource安装使用</strong></p>
-<ul>
-<li><code>npm install vue-resource</code></li>
-<li>在main.js头部<code>import VueResource from &#39;vue-resource&#39;</code> <code>Vue.use(VueResource)</code></li>
-<li>在组件中<pre><code>`this.$http.get(api.news).then(function(response){
-         this.newslist = response.data
- })`
-</code></pre></li>
-</ul>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/02/14/vue-resource入门/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/05/04/Carbon-使用/#post-footer" class="postShorten-excerpt_link link">
                                 注释和共享
                             </a>
                         </p>
@@ -444,24 +273,8 @@ this.$http.get(&apos;http://127.0.0.1:8000/api/news/&apos;+id,{}).then(({data}) 
     <div class="pagination-bar">
     <ul class="pagination">
         
-        <li class="pagination-prev">
-            
-                <a class="btn btn--default btn--small" href="/archives/2017/page/5/">
-            
-                <i class="fa fa-angle-left text-base icon-mr"></i>
-                    <span>上一页</span>
-            </a>
-        </li>
         
-        
-        <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/archives/2017/page/7/">
-                    <span>下一页</span>
-                <i class="fa fa-angle-right text-base icon-ml"></i>
-            </a>
-        </li>
-        
-        <li class="pagination-number">第 6 页 共 9 页</li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
